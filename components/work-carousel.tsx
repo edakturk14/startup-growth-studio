@@ -17,6 +17,7 @@ export function WorkCarousel() {
   const [focused, setFocused] = useState<number | null>(null);
   const [selected, setSelected] = useState(0);
   const [position, setPosition] = useState(0);
+  const pointerSelectionPending = useRef(false);
   const [viewport, api] = useEmblaCarousel(
     { loop: true, dragFree: true, align: "start", containScroll: false },
     [
@@ -41,11 +42,15 @@ export function WorkCarousel() {
     if (!api) return;
     const synchronize = () => setPosition(api.selectedScrollSnap());
     const interact = () => {
+      pointerSelectionPending.current = true;
       setManualPause(true);
       setSelected(api.selectedScrollSnap());
     };
     const settle = () => {
-      setSelected(api.selectedScrollSnap());
+      if (pointerSelectionPending.current) {
+        pointerSelectionPending.current = false;
+        setSelected(api.selectedScrollSnap());
+      }
     };
     synchronize();
     api
@@ -76,6 +81,7 @@ export function WorkCarousel() {
 
   function navigate(direction: number) {
     if (!api) return;
+    pointerSelectionPending.current = false;
     const next =
       (api.selectedScrollSnap() + direction + projects.length) %
       projects.length;
@@ -102,6 +108,7 @@ export function WorkCarousel() {
           <button
             className="playback-button"
             onClick={() => {
+              pointerSelectionPending.current = false;
               if (manualPause || preferencePaused) {
                 setManualPause(false);
                 setMotionOptIn(true);
@@ -153,11 +160,13 @@ export function WorkCarousel() {
                 key={project.id}
                 className={`project-card ${show ? "show-details" : ""}`}
                 onMouseEnter={() => {
+                  pointerSelectionPending.current = false;
                   setHovered(index);
                   setSelected(index);
                 }}
                 onMouseLeave={() => setHovered(null)}
                 onFocusCapture={() => {
+                  pointerSelectionPending.current = false;
                   setFocused(index);
                   setSelected(index);
                 }}
@@ -171,6 +180,7 @@ export function WorkCarousel() {
                 <button
                   className="project-select"
                   onClick={() => {
+                    pointerSelectionPending.current = false;
                     setSelected(index);
                     setManualPause(true);
                   }}
