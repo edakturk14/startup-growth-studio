@@ -82,6 +82,8 @@ export function WorkCarousel() {
 
   function navigate(direction: number, immediate = false) {
     if (!api) return;
+    // Restore Embla's normal scroll body before setting a navigation target.
+    api.plugins().autoScroll?.stop();
     pointerSelectionPending.current = false;
     const next =
       (api.selectedScrollSnap() + direction + projects.length) %
