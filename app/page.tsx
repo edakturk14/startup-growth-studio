@@ -132,8 +132,8 @@ export default function Home() {
           </section>
           <section id="contact" className="section contact-section" data-reveal>
             <span className="eyebrow section-kicker">Let’s make a connection / 05</span>
-            <h2>Tell us what you're building.</h2>
-            <p>Let's find the right way to bring it to market.</p>
+            <h2>Tell us what you&apos;re building.</h2>
+            <p>Let&apos;s find the right way to bring it to market.</p>
             <a
               href={site.bookingUrl || `mailto:${site.email}`}
               className="button button-primary"
