@@ -26,7 +26,8 @@ export function WorkCarousel() {
         playOnInit: false,
         startDelay: 0,
         stopOnInteraction: true,
-        stopOnFocusIn: false,
+        // Stop on slideFocusStart, before Embla moves to a Tab-focused slide.
+        stopOnFocusIn: true,
       }),
     ],
   );
