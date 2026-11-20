@@ -324,20 +324,6 @@ svg {
   padding-top: 106px;
   padding-bottom: 90px;
 }
-.hero-eyebrow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 9px;
-  font-size: 10px;
-  margin-bottom: 24px;
-}
-.status-dot {
-  width: 5px;
-  height: 5px;
-  background: var(--accent);
-  border-radius: 50%;
-}
 .hero h1 {
   font-size: 40px;
   line-height: 1.2;
@@ -358,20 +344,6 @@ svg {
   justify-content: center;
   gap: 27px;
   margin-top: 30px;
-}
-.hero-scroll {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  align-items: center;
-  font-size: 11px;
-  color: var(--muted);
-  margin-top: 75px;
-}
-.hero-scroll svg {
-  transform: rotate(90deg);
-  width: 13px;
-  color: var(--accent);
 }
 .services-grid {
   display: grid;
@@ -927,9 +899,6 @@ svg {
     padding-top: 125px;
     padding-bottom: 104px;
   }
-  .hero-scroll {
-    margin-top: 85px;
-  }
 }
 @media (max-width: 1050px) {
   .container,
@@ -1054,12 +1023,6 @@ svg {
     padding-top: 80px;
     padding-bottom: 44px;
   }
-  .hero-eyebrow {
-    font-size: 8px;
-    letter-spacing: 0.1em;
-    gap: 7px;
-    margin-bottom: 22px;
-  }
   .hero h1 {
     font-size: 31px;
     line-height: 1.2;
@@ -1088,10 +1051,6 @@ svg {
   }
   .underlined-link svg {
     width: 14px;
-  }
-  .hero-scroll {
-    margin-top: 55px;
-    font-size: 9px;
   }
   .section {
     padding-block: 36px;

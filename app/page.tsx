@@ -19,10 +19,6 @@ export default function Home() {
       <Header showTestimonials={showTestimonials} />
       <main id="main">
         <section className="hero container" aria-labelledby="hero-title">
-          <p className="eyebrow hero-eyebrow">
-            <span className="status-dot" />
-            Complex products. Clear stories.
-          </p>
           <h1 id="hero-title">
             A growth studio for
             <br className="desktop-break" /> technical startups.
@@ -39,14 +35,6 @@ export default function Home() {
               Explore our services <Arrow />
             </a>
           </div>
-          <a
-            href="#services"
-            className="hero-scroll"
-            aria-label="Scroll to services"
-          >
-            <span>Good ideas deserve to be understood.</span>
-            <Arrow />
-          </a>
         </section>
         <div className="container">
           <section
