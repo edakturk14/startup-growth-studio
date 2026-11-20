@@ -124,7 +124,7 @@ h1, h2, h3 { text-wrap: balance; }
   .site-header > a:first-child { padding-right: 2px; }
   .wordmark { gap: 7px; }
   .wordmark-type > span:first-child { font-size: 19px; }
-  .wordmark-suffix, .site-header .wordmark-suffix { font-size: 6px; }
+  .wordmark-suffix, .site-header .wordmark-suffix { font-size: 7px; }
   .brand-mark { width: 25px; height: 25px; }
   .header-contact { padding: 7px 12px; font-size: 11px; }
   .menu-toggle { width: 44px; height: 44px; padding: 8px; }
@@ -140,7 +140,7 @@ h1, h2, h3 { text-wrap: balance; }
   .section { padding-block: 44px; }
   .section-label { font-size: 9px; margin-bottom: 18px; }
   .work-section { padding-bottom: 28px; }
-  .carousel-hint { font-size: 10px; max-width: 120px; }
+  .carousel-hint { font-size: 11px; max-width: 120px; }
   .carousel-controls { gap: 6px; }
   .playback-button { font-size: 10px; }
   .project-caption { padding: 15px 7px 16px; }

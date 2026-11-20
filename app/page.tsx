@@ -82,7 +82,7 @@ export default function Home() {
                 developer programs and bring people together to build.
               </p>
               <div className="experience">
-                <span className="eyebrow">Founder’s experience</span>
+                <span className="eyebrow">Experience</span>
                 <ul aria-label="Professional experience">
                   {experience.map((company) => (
                     <li key={company.name}>
@@ -124,7 +124,7 @@ export default function Home() {
           <section id="contact" className="section contact-section" data-reveal>
             <span className="contact-mark" aria-hidden="true">↗</span>
             <h2>Tell us what you’re building.</h2>
-            <p>Let’s find the right way to grow.</p>
+            <p>Let&apos;s find the right way to bring it to market.</p>
             <a
               href={site.bookingUrl || `mailto:${site.email}`}
               className="button button-primary"
