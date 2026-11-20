@@ -80,7 +80,7 @@ export function WorkCarousel() {
     };
   }, [api, paused]);
 
-  function navigate(direction: number) {
+  function navigate(direction: number, moveFocus = false) {
     if (!api) return;
     pointerSelectionPending.current = false;
     const next =
@@ -89,7 +89,14 @@ export function WorkCarousel() {
     setManualPause(true);
     setSelected(next);
     setPosition(next);
-    api.scrollTo(next, reduced);
+    api.scrollTo(next, reduced || moveFocus);
+    // Viewport arrow keys move both the visible project and its focus ring.
+    // Toolbar buttons retain focus so they can be pressed repeatedly.
+    if (moveFocus) {
+      root.current
+        ?.querySelectorAll<HTMLButtonElement>(".project-select")
+        [next]?.focus({ preventScroll: true });
+    }
   }
 
   return (
@@ -149,7 +156,7 @@ export function WorkCarousel() {
         onKeyDown={(event) => {
           if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
             event.preventDefault();
-            navigate(event.key === "ArrowRight" ? 1 : -1);
+            navigate(event.key === "ArrowRight" ? 1 : -1, true);
           }
         }}
       >
