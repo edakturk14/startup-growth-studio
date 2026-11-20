@@ -16,7 +16,7 @@ export function Arrow({
       strokeWidth="1.5"
       aria-hidden="true"
     >
-      <path d={diagonal ? "M6 18 18 6M6 6h12v12" : "M4 12h15m-6-6 6 6-6 6"} />
+      <path vectorEffect="non-scaling-stroke" d={diagonal ? "M6 18 18 6M6 6h12v12" : "M4 12h15m-6-6 6 6-6 6"} />
     </svg>
   );
 }

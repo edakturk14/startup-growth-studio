@@ -1,6 +1,10 @@
-# Ship & Tell Studio
+# Eda Studio — comparison concept 5
 
 A standalone studio website built with Next.js App Router, TypeScript, and Tailwind CSS, using the original handoff assets. This does not change edatweets.com.
+
+This independent option starts from PR #1 without changing its branch. Eda Studio uses a personal-name identity, warm sand on charcoal, an editorial split hero with a three-discipline diagram, and a work → services → founder sequence. It is a local comparison concept, not a production launch or a cleared business name.
+
+UI polish follows [Jakub Krehel’s Better UI](https://github.com/jakubkrehel/skills/tree/main/skills/better-ui): inset white image outlines, concentric header/button radii, optical icon padding, and pointer-gated hover. Motion follows [Emil Kowalski’s design-engineering guidance](https://github.com/emilkowalski/skills/tree/main/skills/emil-design-eng): brief press feedback, interruptible transitions, a grouped hero entrance, and instant keyboard carousel navigation. Reduced-motion, pause controls, and no-JavaScript readability remain in place.
 
 ## Install and develop
 

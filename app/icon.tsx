@@ -4,12 +4,7 @@ import { site } from "@/lib/content";
 export const size = { width: 64, height: 64 };
 export const contentType = "image/png";
 export default function Icon() {
-  const initials = site.brandName
-    .split(/\s*&\s*|\s+/)
-    .map((word) => word[0])
-    .slice(0, 2)
-    .join("")
-    .toUpperCase();
+  const initials = `${site.brandName[0].toLowerCase()}.`;
   return new ImageResponse(
     (
       <div

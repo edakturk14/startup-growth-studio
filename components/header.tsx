@@ -7,7 +7,7 @@ import { Arrow } from "./icons";
 export function Wordmark() {
   return (
     <span className="wordmark">
-      <span>{site.brandName.toLowerCase()}</span>
+      <span className="wordmark-name">{site.brandName.toLowerCase()}<span className="wordmark-dot">.</span></span>
       <span className="wordmark-suffix">{site.brandSuffix}</span>
     </span>
   );
@@ -78,7 +78,7 @@ export function Header({ showTestimonials }: { showTestimonials: boolean }) {
         href="#contact"
         onClick={() => setOpen(false)}
       >
-        Let’s talk
+        Let’s talk <Arrow diagonal />
       </a>
       <button
         ref={menuButton}
