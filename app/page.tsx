@@ -79,7 +79,7 @@ export default function Home() {
               />
             </div>
             <div className="about-copy">
-              <span className="eyebrow">02 / About the studio</span>
+              <span className="eyebrow">Experience</span>
               <h2>Hi, I’m {site.founder.firstName}!</h2>
               <p>
                 I’m the founder of {site.brandName}. I work with startups on
@@ -93,7 +93,6 @@ export default function Home() {
                 developer programs and bring people together to build.
               </p>
               <div className="experience">
-                <span className="eyebrow">Experience</span>
                 <ul aria-label="Professional experience">
                   {experience.map((company) => (
                     <li key={company.name}>
@@ -134,9 +133,8 @@ export default function Home() {
             </div>
           </section>
           <section id="contact" className="section contact-section" data-reveal>
-            <span className="eyebrow">The next chapter starts here</span>
-            <h2>Tell us what you’re building.</h2>
-            <p>Let’s find the right way to grow.</p>
+            <h2>Tell us what you're building.</h2>
+            <p>Let's find the right way to bring it to market.</p>
             <a
               href={site.bookingUrl || `mailto:${site.email}`}
               className="button button-primary"
