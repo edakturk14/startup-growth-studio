@@ -93,9 +93,23 @@ export function WorkCarousel() {
     // Viewport arrow keys move both the visible project and its focus ring.
     // Toolbar buttons retain focus so they can be pressed repeatedly.
     if (moveFocus) {
-      root.current
+      const destination = root.current
         ?.querySelectorAll<HTMLButtonElement>(".project-select")
-        [next]?.focus({ preventScroll: true });
+        [next];
+      destination?.focus({ preventScroll: true });
+      if (destination) {
+        // A detail link may have scrolled its image behind the sticky header.
+        // Restore vertical visibility without disturbing Embla's horizontal track.
+        const bounds = destination.getBoundingClientRect();
+        const headerBottom = document.querySelector(".site-header")
+          ?.getBoundingClientRect().bottom ?? 0;
+        const top = headerBottom + 16;
+        const bottom = window.innerHeight - 16;
+        const offset = bounds.top < top
+          ? bounds.top - top
+          : bounds.bottom > bottom ? bounds.bottom - bottom : 0;
+        if (offset) window.scrollBy({ top: offset, behavior: "instant" });
+      }
     }
   }
 
