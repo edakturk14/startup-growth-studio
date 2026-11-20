@@ -10,12 +10,15 @@ const inter = localFont({
   variable: "--font-inter",
 });
 
+// Preview origin resolves sharing assets without claiming a production canonical.
+const metadataOrigin = site.canonicalUrl || process.env.SITE_PREVIEW_URL;
+
 export const metadata: Metadata = {
   title: `${site.fullBrandName} — A growth studio for startups`,
   description,
+  ...(metadataOrigin ? { metadataBase: new URL(metadataOrigin) } : {}),
   ...(site.canonicalUrl
     ? {
-        metadataBase: new URL(site.canonicalUrl),
         alternates: { canonical: site.canonicalUrl },
       }
     : {}),

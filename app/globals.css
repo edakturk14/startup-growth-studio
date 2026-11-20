@@ -497,7 +497,7 @@ svg {
   transform: rotate(180deg);
 }
 .project-track {
-  position: relative;
+  /* Track and slides share the positioned viewport as their offset parent. */
   display: flex;
   gap: 0;
   overflow-x: auto;

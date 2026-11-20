@@ -191,6 +191,8 @@ export function WorkCarousel() {
                     pointerSelectionPending.current = false;
                     setSelected(index);
                     setManualPause(true);
+                    // A tapped peek card must reveal its full details, not just pause.
+                    api?.scrollTo(index, reduced);
                   }}
                   aria-label={`Explore ${project.title}`}
                   aria-expanded={show}

@@ -43,6 +43,8 @@ npm start
 
 Deploy as a standard Next.js app to a compatible Node host or import the repo into Vercel. Build using `npm ci && npm run build`, then serve with `npm start`. A Devin browser preview is session-authorized, not a public production deployment. No domain is configured; only set `canonicalUrl` after confirming a real deployment URL.
 
+For a local/session preview, set `SITE_PREVIEW_URL` to its full origin **when building**, so generated sharing-image URLs point at the preview rather than Next.js’s default localhost:3000. This does not emit a production canonical URL. A configured `canonicalUrl` takes precedence.
+
 ## Content and branding
 
 The studio’s positioning is “A growth studio for startups,” with community, content, and strategy as equal service pillars. Past-work descriptions retain their original technical context.
