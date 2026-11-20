@@ -77,6 +77,6 @@ Alternatively, enable `showTestimonialPlaceholders` in the config during develop
 - Reduced motion starts paused. Playback can be explicitly enabled. Embla loops by repositioning original interactive cards, without loop clones. Without JavaScript, original project details and links remain readable with native horizontal browsing.
 - Testimonials pause on hover/focus, manual Pause, offscreen, and hidden tabs. Reduced motion removes testimonial animation. Mobile uses native swipe instead of autoplay.
 - The mobile menu closes with Escape, outside click, navigation, focus exit, and desktop resize. Native smooth anchors account for the sticky header. Visible focus rings and a skip link support keyboard users.
-- Scroll reveals use 16px movement, 550ms duration, and short service staggers. Server-rendered content is visible without JavaScript; only below-fold content is enhanced. Image hover zoom is limited to 1.02x.
+- The hero enters in a slower 950ms stagger; scroll reveals use 18px movement and 850ms easing. Service, image, and button hover effects stay subtle, with image zoom limited to 1.02x. Reduced motion removes entrances and transitions. Server-rendered content remains readable without JavaScript.
 
 The approved mockup supplies layout direction, not production text or photographs. Original work images use `next/image`, preserve aspect ratios, and load lazily below the fold. Eda’s original portrait appears only in About. No invented client marks, pricing, team, quotes, or domain are included.

@@ -85,6 +85,7 @@
   --accent-fg: #182010;
   --radius: 8px;
   --font: var(--font-inter), Arial, sans-serif;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }
 @theme inline {
   --font-sans: var(--font-inter);
@@ -211,8 +212,9 @@ svg {
   font-weight: 500;
   line-height: 1.4;
   transition:
-    background 0.2s,
-    transform 0.2s;
+    background 0.4s,
+    box-shadow 0.4s,
+    transform 0.5s var(--ease-out);
 }
 .button:hover {
   transform: translateY(-2px);
@@ -223,6 +225,21 @@ svg {
 }
 .button-primary:hover {
   background: var(--text);
+  box-shadow: 0 6px 24px rgb(221 239 167 / 10%);
+}
+.button svg,
+.underlined-link svg,
+.header-contact svg,
+.project-details a svg {
+  transition: transform 0.55s var(--ease-out);
+}
+.button:hover svg,
+.header-contact:hover svg {
+  transform: translate(2px, -2px);
+}
+.underlined-link:hover svg,
+.project-details a:hover svg {
+  transform: translateX(3px);
 }
 .underlined-link {
   font-size: 14px;
@@ -369,6 +386,7 @@ svg {
 }
 .service h3 {
   margin-bottom: 14px;
+  transition: color 0.45s;
 }
 .service p {
   color: var(--muted);
@@ -479,10 +497,16 @@ svg {
   overflow: hidden;
   border-radius: var(--radius);
   background: var(--surface);
+  outline: 1px solid transparent;
+  outline-offset: -1px;
+  transition: outline-color 0.6s;
 }
 .project-image img {
   object-fit: contain;
-  transition: transform 0.45s;
+  transition: transform 0.85s var(--ease-out);
+}
+.project-card:is(:hover, :focus-within) .project-image {
+  outline-color: var(--border);
 }
 .project-select:hover .project-image img,
 .project-select:focus-visible .project-image img {
@@ -523,6 +547,10 @@ svg {
   font-size: 18px;
   letter-spacing: -0.025em;
   font-weight: 500;
+  transition: color 0.4s;
+}
+.project-card:is(:hover, :focus-within) .project-title {
+  color: var(--accent);
 }
 .project-category {
   display: block;
@@ -563,11 +591,15 @@ svg {
 .enhanced .project-details {
   visibility: hidden;
   opacity: 0;
-  transition: opacity 0.25s;
+  transform: translateY(6px);
+  transition:
+    opacity 0.4s,
+    transform 0.6s var(--ease-out);
 }
 .enhanced .show-details .project-details {
   visibility: visible;
   opacity: 1;
+  transform: none;
 }
 .project-clone {
   display: none;
@@ -644,6 +676,7 @@ svg {
 .founder-image img {
   object-fit: cover;
   object-position: 50% 40%;
+  transition: transform 1s var(--ease-out);
 }
 .about-copy {
   padding-top: 5px;
@@ -661,6 +694,9 @@ svg {
   color: var(--muted);
   font-size: 15px;
   line-height: 1.85;
+}
+.about-copy > p + p {
+  margin-top: 16px;
 }
 .experience {
   margin-top: 30px;
@@ -768,12 +804,44 @@ svg {
 }
 [data-reveal] {
   transition:
-    opacity 0.55s,
-    transform 0.55s;
+    opacity 0.85s var(--ease-out),
+    transform 0.85s var(--ease-out);
 }
 .reveal-ready {
   opacity: 0;
-  transform: translateY(16px);
+  transform: translateY(18px);
+}
+@keyframes studio-enter {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero > h1,
+  .hero-copy,
+  .hero-actions {
+    animation: studio-enter 0.95s var(--ease-out) both;
+  }
+  .hero > h1 { animation-delay: 0.08s; }
+  .hero-copy { animation-delay: 0.22s; }
+  .hero-actions { animation-delay: 0.36s; }
+}
+@media (hover: hover) and (pointer: fine) {
+  .service {
+    transition:
+      opacity 0.85s var(--ease-out),
+      transform 0.85s var(--ease-out),
+      border-color 0.5s;
+  }
+  .service:not(.reveal-ready):hover { transform: translateY(-4px); }
+  .service:hover { border-color: var(--accent); }
+  .service:hover h3 { color: var(--accent); }
+  .founder-image:hover img { transform: scale(1.02); }
 }
 .testimonials-section .section-heading > .playback-button {
   align-self: flex-end;
