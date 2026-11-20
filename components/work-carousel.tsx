@@ -45,7 +45,7 @@ export function WorkCarousel() {
     const interact = () => {
       pointerSelectionPending.current = true;
       setManualPause(true);
-      setSelected(api.selectedScrollSnap());
+      // Preserve a revealed card (and its link) until an actual drag settles.
     };
     const settle = () => {
       if (pointerSelectionPending.current) {
