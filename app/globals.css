@@ -499,7 +499,7 @@ svg {
 .project-track {
   position: relative;
   display: flex;
-  gap: 24px;
+  gap: 0;
   overflow-x: auto;
   overscroll-behavior-x: contain;
   scrollbar-width: none;
@@ -518,6 +518,8 @@ svg {
   width: calc((100% - 24px) / 2.35);
   min-width: 0;
   flex-shrink: 0;
+  /* Include the terminal gutter in Embla's loop measurements. */
+  margin-right: 24px;
 }
 .project-select {
   width: 100%;
@@ -1268,9 +1270,10 @@ svg {
     min-height: 34px;
   }
   .project-track {
-    gap: 16px;
+    gap: 0;
   }
   .project-card {
+    margin-right: 16px;
     width: 89%;
   }
   .project-caption {
