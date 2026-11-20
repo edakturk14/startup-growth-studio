@@ -46,7 +46,8 @@
 }
 .quote-track > .quote-card {
   flex: 0 0 auto;
-  min-height: 250px;
+  /* A pair must fill the 530px viewport so three original cards can loop. */
+  min-height: 280px;
   margin-bottom: 18px;
 }
 .quote-column:nth-child(2) .quote-card {
