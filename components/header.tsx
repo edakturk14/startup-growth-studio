@@ -7,8 +7,13 @@ import { Arrow } from "./icons";
 export function Wordmark() {
   return (
     <span className="wordmark">
-      <span>{site.brandName.toLowerCase()}</span>
-      <span className="wordmark-suffix">{site.brandSuffix}</span>
+      <svg className="brand-mark" width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+        <path d="M5 23 23 5M7 5h16v16M5 14l9-9M14 23l9-9" stroke="currentColor" strokeWidth="2" />
+      </svg>
+      <span className="wordmark-type">
+        <span>{site.brandName.toLowerCase()}</span>
+        <span className="wordmark-suffix">{site.brandSuffix}</span>
+      </span>
     </span>
   );
 }
@@ -78,7 +83,7 @@ export function Header({ showTestimonials }: { showTestimonials: boolean }) {
         href="#contact"
         onClick={() => setOpen(false)}
       >
-        Let’s talk
+        Let’s talk <Arrow diagonal />
       </a>
       <button
         ref={menuButton}

@@ -1,4 +1,8 @@
-# Ship & Tell Studio
+# Onward Studio — comparison version 2
+
+An independent naming and UI direction based on the original studio implementation. Onward suggests momentum without limiting the studio to launch work. This branch keeps the original dark palette, warm-sand accent, startup positioning, content, and founder attribution.
+
+The refinement uses [Better UI by Jakub Krehel](https://github.com/jakubkrehel/skills/tree/main/skills/better-ui) and [Emil Kowalski’s design-engineering skill](https://github.com/emilkowalski/skills/tree/main/skills/emil-design-eng): concentric header radii, exact white image outlines, hover-capable pointer styling, 44px carousel controls, responsive press feedback, shorter interruptible transitions, and a trigger-origin mobile menu. No new motion dependencies were added. The original implementation brief is retained as historical context; its provisional name is superseded in this variant.
 
 A standalone studio website built with Next.js App Router, TypeScript, and Tailwind CSS, using the original handoff assets. This does not change edatweets.com.
 
@@ -83,7 +87,7 @@ Alternatively, enable `showTestimonialPlaceholders` in the config during develop
 - The mobile menu closes with Escape, outside click, navigation, focus exit, and desktop resize. Native smooth anchors account for the sticky header. Visible focus rings and a skip link support keyboard users.
 - The collaboration FAQ uses native details/summary controls, including keyboard and no-JavaScript support; no invented prices or subscription terms.
 - Services use a sticky desktop heading and native-scroll-driven focus between three readable rows. There is no scroll lock or wheel interception; reduced motion and no-JavaScript rendering keep the full static content.
-- The hero enters in a slower 950ms stagger; scroll reveals use 18px movement and 850ms easing. Service, image, and button hover effects stay subtle, with image zoom limited to 1.02x. Reduced motion removes entrances and transitions. Server-rendered content remains readable without JavaScript.
+- The hero enters in a 600ms stagger; scroll reveals use 12px movement and 450ms easing. Interactive transitions use 150–250ms, press feedback uses 160ms, and image zoom is limited to 1.02x. Hover styling is pointer-gated. Reduced motion removes entrances and transitions. Server-rendered content remains readable without JavaScript.
 
 The approved mockup supplies layout direction, not production text or photographs. Original work images use `next/image`, preserve aspect ratios, and load lazily below the fold. Eda’s original portrait appears only in About. No invented client marks, pricing, team, quotes, or domain are included.
 

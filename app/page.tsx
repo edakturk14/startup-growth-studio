@@ -21,29 +21,48 @@ export default function Home() {
       <Header showTestimonials={showTestimonials} />
       <main id="main">
         <section className="hero container" aria-labelledby="hero-title">
-          <h1 id="hero-title">
-            A growth studio
-            <br className="desktop-break" /> for startups.
-          </h1>
-          <p className="hero-copy">
-            We help startups grow through community, content, and strategy.
-          </p>
-          <div className="hero-actions">
-            <a href="#contact" className="button button-primary">
-              Let’s talk <Arrow diagonal />
-            </a>
-            <a href="#services" className="underlined-link">
-              Explore our services <Arrow />
-            </a>
+          <div className="hero-content">
+            <h1 id="hero-title">
+              A growth studio
+              <br className="desktop-break" /> for <span>startups.</span>
+            </h1>
+            <p className="hero-copy">
+              We help startups grow through community, content, and strategy.
+            </p>
+            <div className="hero-actions">
+              <a href="#contact" className="button button-primary">
+                Let’s talk <Arrow diagonal />
+              </a>
+              <a href="#services" className="underlined-link">
+                Explore our services <Arrow />
+              </a>
+            </div>
+          </div>
+          <div className="hero-art" aria-hidden="true">
+            <svg viewBox="0 0 440 330" fill="none">
+              <path className="art-grid" d="M0 66h440M0 132h440M0 198h440M0 264h440M88 0v330M176 0v330M264 0v330M352 0v330" />
+              <path className="art-guide" d="M34 295 405 24" />
+              <g className="art-paths" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M38 255h86c63 0 82-55 116-89L365 41" />
+                <path d="M38 279h92c65 0 84-54 117-87L382 57" />
+                <path d="M38 303h98c66 0 86-52 118-84L399 73" />
+                <path d="M313 41h52v52M330 57h52v52M347 73h52v52" />
+              </g>
+              <circle cx="38" cy="255" r="4" fill="currentColor" />
+              <circle cx="38" cy="279" r="4" fill="currentColor" />
+              <circle cx="38" cy="303" r="4" fill="currentColor" />
+            </svg>
           </div>
         </section>
         <div className="container">
           <section id="work" className="section work-section" data-reveal>
             <div className="section-heading">
               <div>
+                <span className="eyebrow section-kicker">01 / Selected work</span>
                 <h2>Work behind the studio</h2>
                 <p>Selected projects led or co-created by our founder.</p>
               </div>
+              <span className="section-note">Ideas into action <Arrow diagonal /></span>
             </div>
             <WorkCarousel />
           </section>
@@ -60,7 +79,7 @@ export default function Home() {
               />
             </div>
             <div className="about-copy">
-              <span className="eyebrow">About the studio</span>
+              <span className="eyebrow">02 / About the studio</span>
               <h2>Hi, I’m {site.founder.firstName}!</h2>
               <p>
                 I’m the founder of {site.brandName}. I work with startups on
@@ -94,7 +113,10 @@ export default function Home() {
           </section>
           <Services />
           <section id="faq" className="section faq-section" data-reveal>
-            <h2>FAQs</h2>
+            <div className="faq-intro">
+              <span className="eyebrow section-kicker">04 / A few answers</span>
+              <h2>FAQs</h2>
+            </div>
             <div className="faq-list">
               {faq.map((item) => (
                 <details
@@ -112,6 +134,7 @@ export default function Home() {
             </div>
           </section>
           <section id="contact" className="section contact-section" data-reveal>
+            <span className="eyebrow">The next chapter starts here</span>
             <h2>Tell us what you’re building.</h2>
             <p>Let’s find the right way to grow.</p>
             <a
