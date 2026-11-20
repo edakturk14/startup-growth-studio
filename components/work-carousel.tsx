@@ -80,7 +80,7 @@ export function WorkCarousel() {
     };
   }, [api, paused]);
 
-  function navigate(direction: number, immediate = false) {
+  function navigate(direction: number, immediate = false, moveFocus = false) {
     if (!api) return;
     // Restore Embla's normal scroll body before setting a navigation target.
     api.plugins().autoScroll?.stop();
@@ -92,6 +92,11 @@ export function WorkCarousel() {
     setSelected(next);
     setPosition(next);
     api.scrollTo(next, reduced || immediate);
+    if (moveFocus) {
+      root.current
+        ?.querySelectorAll<HTMLButtonElement>(".project-select")
+        [next]?.focus({ preventScroll: true });
+    }
   }
 
   return (
@@ -151,7 +156,7 @@ export function WorkCarousel() {
         onKeyDown={(event) => {
           if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
             event.preventDefault();
-            navigate(event.key === "ArrowRight" ? 1 : -1, true);
+            navigate(event.key === "ArrowRight" ? 1 : -1, true, true);
           }
         }}
       >
