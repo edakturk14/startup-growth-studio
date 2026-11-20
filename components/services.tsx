@@ -55,7 +55,9 @@ export function Services() {
       data-reveal
     >
       <div className="services-intro">
+        <span className="eyebrow section-kicker">What we do / 02</span>
         <h2 id="services-title">How we help</h2>
+        <p className="services-note">Good ideas need more than attention. They need connection.</p>
         <div className="services-progress" aria-hidden="true">
           <span key={active}>{String(active + 1).padStart(2, "0")}</span>
           <span>/ {String(services.length).padStart(2, "0")}</span>

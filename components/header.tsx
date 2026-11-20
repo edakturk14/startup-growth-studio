@@ -7,8 +7,11 @@ import { Arrow } from "./icons";
 export function Wordmark() {
   return (
     <span className="wordmark">
-      <span>{site.brandName.toLowerCase()}</span>
-      <span className="wordmark-suffix">{site.brandSuffix}</span>
+      <span className="signal-mark" aria-hidden="true"><i /><i /><i /></span>
+      <span className="wordmark-type">
+        <span>{site.brandName.toLowerCase()}</span>
+        <span className="wordmark-suffix">{site.brandSuffix}</span>
+      </span>
     </span>
   );
 }
@@ -35,7 +38,7 @@ export function Header({ showTestimonials }: { showTestimonials: boolean }) {
       if (!header.current?.contains(event.target as Node)) setOpen(false);
     };
     const escape = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
+      if (event.key === "Escape" && menuButton.current?.getAttribute("aria-expanded") === "true") {
         setOpen(false);
         menuButton.current?.focus();
       }

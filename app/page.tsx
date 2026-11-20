@@ -21,26 +21,44 @@ export default function Home() {
       <Header showTestimonials={showTestimonials} />
       <main id="main">
         <section className="hero container" aria-labelledby="hero-title">
-          <h1 id="hero-title">
-            A growth studio
-            <br className="desktop-break" /> for startups.
-          </h1>
-          <p className="hero-copy">
-            We help startups grow through community, content, and strategy.
-          </p>
-          <div className="hero-actions">
-            <a href="#contact" className="button button-primary">
-              Let’s talk <Arrow diagonal />
-            </a>
-            <a href="#services" className="underlined-link">
-              Explore our services <Arrow />
-            </a>
+          <div className="hero-message">
+            <h1 id="hero-title">
+              A growth studio
+              <br className="desktop-break" /> for <span>startups.</span>
+            </h1>
+            <p className="hero-copy">
+              We help startups grow through community, content, and strategy.
+            </p>
+            <div className="hero-actions">
+              <a href="#contact" className="button button-primary">
+                Let’s talk <Arrow diagonal />
+              </a>
+              <a href="#services" className="underlined-link">
+                Explore our services <Arrow />
+              </a>
+            </div>
+          </div>
+          <div className="signal-art" aria-hidden="true">
+            <span className="signal-orbit orbit-outer" />
+            <span className="signal-orbit orbit-middle" />
+            <span className="signal-orbit orbit-inner" />
+            <div className="signal-art-center">
+              <span className="signal-mark"><i /><i /><i /></span>
+              <span>Less noise.<br /><em>More signal.</em></span>
+            </div>
+            <span className="signal-point" />
+          </div>
+          <div className="hero-footnote" aria-hidden="true">
+            <span><small>01</small> Community</span>
+            <span><small>02</small> Content</span>
+            <span><small>03</small> Strategy</span>
           </div>
         </section>
         <div className="container">
           <section id="work" className="section work-section" data-reveal>
             <div className="section-heading">
               <div>
+                <span className="eyebrow section-kicker">Selected work / 01</span>
                 <h2>Work behind the studio</h2>
                 <p>Selected projects led or co-created by our founder.</p>
               </div>
@@ -50,6 +68,7 @@ export default function Home() {
           {showTestimonials && (
             <Testimonials entries={testimonials} preview={testimonialPreview} />
           )}
+          <Services />
           <section id="about" className="section about-section" data-reveal>
             <div className="founder-image">
               <Image
@@ -60,7 +79,7 @@ export default function Home() {
               />
             </div>
             <div className="about-copy">
-              <span className="eyebrow">About the studio</span>
+              <span className="eyebrow">Behind the signal / 03</span>
               <h2>Hi, I’m {site.founder.firstName}!</h2>
               <p>
                 I’m the founder of {site.brandName}. I work with startups on
@@ -92,9 +111,11 @@ export default function Home() {
               </div>
             </div>
           </section>
-          <Services />
           <section id="faq" className="section faq-section" data-reveal>
-            <h2>FAQs</h2>
+            <div className="faq-intro">
+              <span className="eyebrow section-kicker">Good questions / 04</span>
+              <h2>A little clarity.</h2>
+            </div>
             <div className="faq-list">
               {faq.map((item) => (
                 <details
@@ -112,6 +133,7 @@ export default function Home() {
             </div>
           </section>
           <section id="contact" className="section contact-section" data-reveal>
+            <span className="eyebrow section-kicker">Let’s make a connection / 05</span>
             <h2>Tell us what you’re building.</h2>
             <p>Let’s find the right way to grow.</p>
             <a

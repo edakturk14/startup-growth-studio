@@ -21,8 +21,8 @@ export default async function SocialImage() {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: 70,
-          background: "#101110",
-          color: "#F0EFE7",
+          background: "#151512",
+          color: "#F3F0E8",
           fontFamily: "Inter",
         }}
       >
