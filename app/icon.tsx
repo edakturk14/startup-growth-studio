@@ -19,7 +19,7 @@ export default function Icon() {
           justifyContent: "center",
           width: "100%",
           height: "100%",
-          background: "#DDEFA7",
+          background: "#E8D5B0",
           color: "#101110",
           fontSize: 28,
           fontWeight: 500,

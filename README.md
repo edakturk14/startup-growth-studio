@@ -34,7 +34,7 @@ Deploy as a standard Next.js app to a compatible Node host or import the repo in
 | `content/services.json`     | Service headings and descriptions.                                                                                               |
 | `content/projects.json`     | Original images, roles, descriptions, categories, and destination links.                                                         |
 | `content/experience.json`   | Experience names and bundled logo dimensions; separate from clients and endorsements.                                           |
-| `content/engagement.json`   | Project-based/ongoing cards and the lightweight three-step collaboration process.                                                 |
+| `content/faq.json`          | Collaboration FAQ: kickoff, one-off projects, ongoing support, and working directly with Eda.                                    |
 | `content/testimonials.json` | Verified testimonials only; initially empty.                                                                                     |
 | `public/images/`            | Original founder and project images.                                                                                             |
 | `app/globals.css`           | Palette tokens, typography, responsive layout, and motion.                                                                       |
@@ -79,6 +79,10 @@ Alternatively, enable `showTestimonialPlaceholders` in the config during develop
 - Reduced motion starts paused. Playback can be explicitly enabled. Embla loops by repositioning original interactive cards, without loop clones. Without JavaScript, original project details and links remain readable with native horizontal browsing.
 - Testimonials pause on hover/focus, manual Pause, offscreen, and hidden tabs. Reduced motion removes testimonial animation. Mobile uses native swipe instead of autoplay.
 - The mobile menu closes with Escape, outside click, navigation, focus exit, and desktop resize. Native smooth anchors account for the sticky header. Visible focus rings and a skip link support keyboard users.
+- The collaboration FAQ uses native details/summary controls, including keyboard and no-JavaScript support; no invented prices or subscription terms.
+- Services use a sticky desktop heading and native-scroll-driven focus between three readable rows. There is no scroll lock or wheel interception; reduced motion and no-JavaScript rendering keep the full static content.
 - The hero enters in a slower 950ms stagger; scroll reveals use 18px movement and 850ms easing. Service, image, and button hover effects stay subtle, with image zoom limited to 1.02x. Reduced motion removes entrances and transitions. Server-rendered content remains readable without JavaScript.
 
 The approved mockup supplies layout direction, not production text or photographs. Original work images use `next/image`, preserve aspect ratios, and load lazily below the fold. Eda’s original portrait appears only in About. No invented client marks, pricing, team, quotes, or domain are included.
+
+The chosen accent is warm sand (`#E8D5B0`), including the page, favicon, and sharing image.

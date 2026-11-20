@@ -41,7 +41,7 @@ export default async function SocialImage() {
         >
           A growth studio for technical startups.
         </div>
-        <div style={{ display: "flex", color: "#DDEFA7", fontSize: 22 }}>
+        <div style={{ display: "flex", color: "#E8D5B0", fontSize: 22 }}>
           Complex products. Clear stories.
         </div>
       </div>

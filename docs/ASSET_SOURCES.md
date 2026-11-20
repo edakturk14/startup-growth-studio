@@ -21,6 +21,8 @@ Experience logos were added at Eda’s request and identify her background, not 
 
 ## Design references
 
+- https://www.pinterest.com/pin/1107181889670836129/: Eda’s Services scroll-motion reference, showing a sticky feature presentation and scroll-driven emphasis. Adapted with original service text, native scrolling, and static reduced-motion/no-JavaScript fallbacks; no reference artwork or footage is shipped.
+
 - https://www.withghost.co/: Eda’s reference for a direct, studio-led content flow; adapted as pitch → proof → founder → services → engagement → contact, without copying its claims, team, prices, clients, or testimonials.
 
 - `docs/approved-mockup.png`: generated design mockup approved in this conversation. Use for layout and brand direction only. Its rasterized text and recreated photos must not be used as production assets.

@@ -1,7 +1,6 @@
 import Image from "next/image";
-import services from "@/content/services.json";
 import experience from "@/content/experience.json";
-import engagement from "@/content/engagement.json";
+import faq from "@/content/faq.json";
 import {
   site,
   showTestimonials,
@@ -14,6 +13,7 @@ import { CopyEmail } from "@/components/contact";
 import { WorkCarousel } from "@/components/work-carousel";
 import { Testimonials } from "@/components/testimonials";
 import { ScrollReveals } from "@/components/motion";
+import { Services } from "@/components/services";
 
 export default function Home() {
   return (
@@ -93,50 +93,24 @@ export default function Home() {
               </div>
             </div>
           </section>
-          <section id="services" className="section services-section" data-reveal>
-            <div className="section-heading">
-              <h2>How we help</h2>
-            </div>
-            <div className="services-grid">
-              {services.map((service, index) => (
-                <article
-                  key={service.title}
-                  className="service"
-                  data-reveal
-                  style={{ transitionDelay: `${index * 70}ms` }}
+          <Services />
+          <section id="faq" className="section faq-section" data-reveal>
+            <h2>FAQs</h2>
+            <div className="faq-list">
+              {faq.map((item) => (
+                <details
+                  key={item.question}
+                  className="faq-item"
+                  name="collaboration"
                 >
-                  <span className="service-index">0{index + 1}</span>
-                  <h3>{service.title}</h3>
-                  <p>{service.description}</p>
-                </article>
+                  <summary>
+                    <h3>{item.question}</h3>
+                    <span className="faq-icon" aria-hidden="true" />
+                  </summary>
+                  <p className="faq-answer">{item.answer}</p>
+                </details>
               ))}
             </div>
-          </section>
-          <section className="section partnership-section" data-reveal>
-            <span className="eyebrow">Ways to work together</span>
-            <h2>A project. Or a partnership.</h2>
-            <div className="partnership-grid">
-              {engagement.options.map((option) => (
-                <article key={option.title}>
-                  <h3>{option.title}</h3>
-                  <p>{option.description}</p>
-                  <a href="#contact" className="engagement-link">
-                    {option.cta} <Arrow diagonal />
-                  </a>
-                </article>
-              ))}
-            </div>
-            <ol className="process-steps" aria-label="How we’ll work together">
-              {engagement.steps.map((step, index) => (
-                <li key={step.title}>
-                  <span className="process-number" aria-hidden="true">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <h3>{step.title}</h3>
-                  <p>{step.description}</p>
-                </li>
-              ))}
-            </ol>
           </section>
           <section id="contact" className="section contact-section" data-reveal>
             <h2>Tell us what you’re building.</h2>
