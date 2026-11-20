@@ -1,0 +1,68 @@
+[
+  {
+    "id": "buidlguidl-batches",
+    "title": "BuidlGuidl Batches",
+    "category": "Developer programs",
+    "role": "Program co-creator and lead",
+    "description": "Helped create and lead BuidlGuidl Batches, where developers contribute to open source and build Ethereum apps together.",
+    "image": "/images/buidlguidl-batches.webp",
+    "imageAlt": "BuidlGuidl Batches artwork with an illustrated slide",
+    "url": "https://buidlguidl.com/batches",
+    "context": "founder-prior-work"
+  },
+  {
+    "id": "shipping-log",
+    "title": "Shipping Log",
+    "category": "Newsletter & editorial",
+    "role": "Launch and editorial lead",
+    "description": "Launched and ran BuidlGuidl’s newsletter, sharing what developers were building across the community.",
+    "image": "/images/shipping-log.webp",
+    "imageAlt": "Shipping Log artwork with a sailboat between colorful cliffs",
+    "url": "https://buidlguidl.substack.com/",
+    "context": "founder-prior-work"
+  },
+  {
+    "id": "web2-to-web3",
+    "title": "Web2 to Web3",
+    "category": "Technical education",
+    "role": "Video series co-creator",
+    "description": "Co-created a 15-part guide to building on Ethereum with Austin Griffith and Carlos.",
+    "image": "/images/web2-to-web3.webp",
+    "imageAlt": "Web2 to Web3 video series artwork",
+    "url": "https://www.youtube.com/watch?v=zuJ-elbo88E&list=PLJz1HruEnenAf80uOfDwBPqaliJkjKg69",
+    "context": "founder-prior-work"
+  },
+  {
+    "id": "hyperlane-mcp",
+    "title": "Hyperlane MCP demo",
+    "category": "Developer adoption",
+    "role": "Bounty program and product demo",
+    "description": "Created Hyperlane’s bounty program for AI builders and demonstrated one of the community-built projects. The MCP was built by community contributors.",
+    "image": "/images/hyperlane-mcp-demo.webp",
+    "imageAlt": "Eda presenting a Hyperlane MCP demo",
+    "url": "https://x.com/hyperlane/status/1935063992827092996",
+    "context": "founder-prior-work"
+  },
+  {
+    "id": "ethgunu",
+    "title": "ETHGünü",
+    "category": "Community & events",
+    "role": "Core organizer",
+    "description": "Core organizer of ETHGünü during Devconnect Istanbul 2023. Also hosted a fireside chat with Aya Miyaguchi.",
+    "image": "/images/ethgunu-team.jpg",
+    "imageAlt": "The ETHGünü organizing team and volunteers on stage in Istanbul",
+    "url": "https://ethgunu.com/en/",
+    "context": "founder-prior-work"
+  },
+  {
+    "id": "builder-show",
+    "title": "The Builder Show",
+    "category": "Conversations & education",
+    "role": "Podcast co-host",
+    "description": "Co-hosted The Builder Show with Austin Griffith, talking with people building in crypto.",
+    "image": "/images/builder-show.webp",
+    "imageAlt": "The Builder Show artwork featuring Eda Akturk and Austin Griffith",
+    "url": "https://www.youtube.com/watch?v=cPNrYKR9rtI&list=PLnVqcyNGbH00XdrWBNM6DiPkF6SYBCY_G",
+    "context": "founder-prior-work"
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "brandName": "Ship & Tell",
+  "brandSuffix": "Studio",
+  "fullBrandName": "Ship & Tell Studio",
+  "location": "Brooklyn, New York",
+  "email": "edakturk19@gmail.com",
+  "bookingUrl": null,
+  "canonicalUrl": null,
+  "founder": {
+    "name": "Eda Akturk",
+    "image": "/images/eda-cryptist.webp",
+    "website": "https://www.edatweets.com/"
+  },
+  "socialLinks": {},
+  "showTestimonialPlaceholders": false
+}
