@@ -28,7 +28,6 @@ export default function Home() {
             </h1>
             <p className="hero-copy">
               We help startups grow through community, content, and strategy.
-              Good ideas deserve to find their people.
             </p>
             <div className="hero-actions">
               <a href="#contact" className="button button-primary">
@@ -139,8 +138,8 @@ export default function Home() {
           </section>
           <section id="contact" className="section contact-section" data-reveal>
             <span className="section-kicker">Have something in mind?</span>
-            <h2>Big ideas.<br /><span>Let’s grow them together.</span></h2>
-            <p>Tell us what you’re building. We’ll take it from there.</p>
+            <h2>Tell us what you&apos;re building.</h2>
+            <p>Let&apos;s find the right way to bring it to market.</p>
             <a
               href={site.bookingUrl || `mailto:${site.email}`}
               className="button button-primary"
