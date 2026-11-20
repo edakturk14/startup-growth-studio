@@ -220,7 +220,7 @@ export function Testimonials({
         </div>
       </div>
       <noscript>
-        <style>{`.quote-wall{height:auto!important;mask-image:none!important}.quote-column{height:auto!important;overflow:visible!important}.testimonial-playback{display:none}`}</style>
+        <style>{`.quote-wall{height:auto!important;mask-image:none!important}.quote-column,.quote-track{height:auto!important;overflow:visible!important}.testimonial-playback{display:none}`}</style>
       </noscript>
     </section>
   );
