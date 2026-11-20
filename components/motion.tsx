@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, type RefObject } from "react";
+import { useEffect, useState, type RefObject } from "react";
 
 export function useMotionState(ref: RefObject<HTMLElement | null>) {
   const [reduced, setReduced] = useState(true);
@@ -29,14 +29,9 @@ export function useMotionState(ref: RefObject<HTMLElement | null>) {
 }
 
 export function ScrollReveals() {
-  const mounted = useRef(false);
   useEffect(() => {
-    if (
-      mounted.current ||
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    )
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches)
       return;
-    mounted.current = true;
     const observer = new IntersectionObserver(
       (entries) =>
         entries.forEach((entry) => {
@@ -54,7 +49,10 @@ export function ScrollReveals() {
         observer.observe(element);
       }
     });
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      document.querySelectorAll(".reveal-ready").forEach(element => element.classList.remove("reveal-ready"));
+    };
   }, []);
   return null;
 }
