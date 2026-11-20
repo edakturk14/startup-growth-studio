@@ -26,7 +26,8 @@ export function WorkCarousel() {
         playOnInit: false,
         startDelay: 0,
         stopOnInteraction: true,
-        stopOnFocusIn: false,
+        // Embla restores its normal scroll body before jumping to a Tab-focused slide.
+        stopOnFocusIn: true,
       }),
     ],
   );
@@ -46,6 +47,10 @@ export function WorkCarousel() {
       setManualPause(true);
       setSelected(api.selectedScrollSnap());
     };
+    const focusStart = () => {
+      pointerSelectionPending.current = false;
+      api.plugins().autoScroll.stop();
+    };
     const settle = () => {
       if (pointerSelectionPending.current) {
         pointerSelectionPending.current = false;
@@ -57,12 +62,14 @@ export function WorkCarousel() {
       .on("select", synchronize)
       .on("reInit", synchronize)
       .on("pointerDown", interact)
+      .on("slideFocusStart", focusStart)
       .on("settle", settle);
     return () => {
       api
         .off("select", synchronize)
         .off("reInit", synchronize)
         .off("pointerDown", interact)
+        .off("slideFocusStart", focusStart)
         .off("settle", settle);
     };
   }, [api]);

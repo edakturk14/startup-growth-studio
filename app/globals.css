@@ -325,7 +325,7 @@ svg {
 .hero {
   position: relative;
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
   align-items: center;
   gap: 40px;
   text-align: left;
@@ -572,7 +572,7 @@ svg {
 }
 .project-details {
   padding-top: 15px;
-  min-height: 200px;
+  min-height: 162px;
   font-size: 13px;
   color: var(--muted);
   line-height: 1.7;
@@ -1108,7 +1108,7 @@ svg {
   .hero {
     padding-top: 56px;
     padding-bottom: 0;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 32px;
   }
   .hero h1 {
@@ -1382,7 +1382,7 @@ svg {
 /* Eda Studio: warm, independent, and intentionally editorial. */
 .wordmark-dot { color: var(--accent); }
 .site-header .wordmark > .wordmark-name:first-child { font-size: 27px; letter-spacing: -1.8px; }
-.site-header .wordmark-suffix { font-size: 8px; margin-top: 5px; letter-spacing: 0.18em; }
+.site-header .wordmark-suffix { font-size: 10px; margin-top: 5px; letter-spacing: 0.12em; }
 .header-contact { min-height: 40px; padding-inline: 15px 13px; }
 .header-contact svg { width: 15px; }
 .button { padding-inline: 21px 19px; }
@@ -1400,7 +1400,8 @@ svg {
 .hero-footnote { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center; margin-top: 36px; padding-block: 23px; color: var(--muted); font-size: 11px; border-top: 1px solid var(--border); }
 .hero-footnote a { display: inline-flex; align-items: center; gap: 20px; min-height: 24px; }
 .hero-footnote svg { width: 15px; transform: rotate(90deg); }
-.growth-study { position: relative; min-height: 390px; width: 100%; max-width: 450px; justify-self: end; }
+.hero-main { min-width: 0; }
+.growth-study { position: relative; min-height: 390px; min-width: 0; width: 100%; max-width: 450px; justify-self: end; }
 .growth-study svg { width: 100%; height: auto; margin-top: 10px; }
 .study-caption { position: absolute; top: 0; left: 50%; transform: translateX(-50%); color: var(--muted); white-space: nowrap; font-size: 9px; }
 .growth-ring { stroke: #e8d5b0; stroke-width: 0.8; }
@@ -1408,7 +1409,7 @@ svg {
 .ring-two { opacity: 0.7; }
 .ring-three { opacity: 0.9; }
 .growth-spark { fill: var(--accent); }
-.growth-study text { fill: var(--accent); font-size: 12px; font-family: var(--font); }
+.growth-study text { fill: var(--accent); font-size: 16px; font-family: var(--font); }
 .growth-study > p { text-align: center; font-size: 10px; line-height: 1.65; color: var(--muted); letter-spacing: 0.02em; margin-top: -10px; }
 .growth-study > p br { display: none; }
 .growth-study > p span { margin-left: 4px; color: var(--text); }
@@ -1433,7 +1434,7 @@ svg {
 .project-card:focus-within .project-details, :focus-visible { transition: none; }
 .mobile-nav { overscroll-behavior: contain; max-height: calc(100dvh - 100px); overflow-y: auto; }
 @media (min-width: 701px) and (max-width: 1050px) {
-  .hero { grid-template-columns: 1.1fr 0.9fr; gap: 20px; }
+  .hero { grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 20px; }
   .hero-actions { flex-wrap: wrap; gap: 20px; }
   .growth-study { min-height: 330px; }
   .growth-study > p { margin-top: 12px; }
