@@ -74,7 +74,7 @@ Alternatively, enable `showTestimonialPlaceholders` in the config during develop
 ## Motion and accessibility
 
 - Work glides at 25px/second while onscreen in a visible tab. Hover/focus reveals roles, descriptions, and links while keeping the original image visible. Pause is persistent until Play; Previous/Next, arrow keys, mouse drag, native swipe, and tap selection are supported.
-- Reduced motion starts paused. Work can be explicitly played. Loop clones are inert and hidden from assistive technology. Without JavaScript, original project details and links remain readable with native horizontal browsing.
+- Reduced motion starts paused. Playback can be explicitly enabled. Embla loops by repositioning original interactive cards, without loop clones. Without JavaScript, original project details and links remain readable with native horizontal browsing.
 - Testimonials pause on hover/focus, manual Pause, offscreen, and hidden tabs. Reduced motion removes testimonial animation. Mobile uses native swipe instead of autoplay.
 - The mobile menu closes with Escape, outside click, navigation, focus exit, and desktop resize. Native smooth anchors account for the sticky header. Visible focus rings and a skip link support keyboard users.
 - Scroll reveals use 16px movement, 550ms duration, and short service staggers. Server-rendered content is visible without JavaScript; only below-fold content is enhanced. Image hover zoom is limited to 1.02x.

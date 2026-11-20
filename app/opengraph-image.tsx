@@ -8,7 +8,9 @@ export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 export default async function SocialImage() {
-  const font = await readFile(join(process.cwd(), "app/fonts/Inter.ttf"));
+  const font = await readFile(
+    join(process.cwd(), "app/fonts/Inter-Medium.ttf"),
+  );
   return new ImageResponse(
     (
       <div

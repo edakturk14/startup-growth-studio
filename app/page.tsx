@@ -160,7 +160,14 @@ export default function Home() {
             {Object.entries(site.socialLinks).length > 0 && (
               <nav aria-label="Social links" className="footer-socials">
                 {Object.entries(site.socialLinks).map(([label, url]) => (
-                  <a key={label} href={String(url)} target="_blank" rel="noreferrer">{label}</a>
+                  <a
+                    key={label}
+                    href={String(url)}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {label}
+                  </a>
                 ))}
               </nav>
             )}

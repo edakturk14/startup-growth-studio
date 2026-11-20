@@ -30,8 +30,7 @@ export function useMotionState(ref: RefObject<HTMLElement | null>) {
 
 export function ScrollReveals() {
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches)
-      return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const observer = new IntersectionObserver(
       (entries) =>
         entries.forEach((entry) => {
@@ -51,7 +50,9 @@ export function ScrollReveals() {
     });
     return () => {
       observer.disconnect();
-      document.querySelectorAll(".reveal-ready").forEach(element => element.classList.remove("reveal-ready"));
+      document
+        .querySelectorAll(".reveal-ready")
+        .forEach((element) => element.classList.remove("reveal-ready"));
     };
   }, []);
   return null;

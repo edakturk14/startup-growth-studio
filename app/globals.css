@@ -70,9 +70,6 @@
     flex: 0 0 88%;
     scroll-snap-align: start;
   }
-  .testimonial-playback {
-    visibility: hidden;
-  }
 }
 
 :root {

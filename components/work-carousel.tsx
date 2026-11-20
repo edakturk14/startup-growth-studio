@@ -63,8 +63,15 @@ export function WorkCarousel() {
   }, [api]);
   useEffect(() => {
     if (!api) return;
-    if (paused) api.plugins().autoScroll.stop();
-    else api.plugins().autoScroll.play(0);
+    const playback = () => {
+      if (paused) api.plugins().autoScroll.stop();
+      else api.plugins().autoScroll.play(0);
+    };
+    playback();
+    api.on("reInit", playback);
+    return () => {
+      api.off("reInit", playback);
+    };
   }, [api, paused]);
 
   function navigate(direction: number) {
