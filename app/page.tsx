@@ -113,8 +113,8 @@ export default function Home() {
             </div>
           </section>
           <section id="contact" className="section contact-section" data-reveal>
-            <h2>Tell us what you’re building.</h2>
-            <p>Let’s find the right way to grow.</p>
+            <h2>Tell us what you&apos;re building.</h2>
+            <p>Let&apos;s find the right way to bring it to market.</p>
             <a
               href={site.bookingUrl || `mailto:${site.email}`}
               className="button button-primary"
