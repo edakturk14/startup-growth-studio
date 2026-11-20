@@ -75,13 +75,16 @@ function QuoteColumn({
   entries,
   index,
   paused,
+  staticLayout,
 }: {
   entries: (Testimonial | null)[];
   index: number;
   paused: boolean;
+  staticLayout: boolean;
 }) {
   const [viewport, api] = useEmblaCarousel(
     {
+      active: !staticLayout,
       axis: "y",
       loop: true,
       dragFree: true,
@@ -165,6 +168,7 @@ export function Testimonials({
       className="section testimonials-section"
       data-reveal
       data-paused={paused}
+      data-static={preferencePaused}
     >
       <div className="section-heading">
         <div>
@@ -209,6 +213,7 @@ export function Testimonials({
               entries={column}
               index={index}
               paused={paused}
+              staticLayout={preferencePaused}
               key={index}
             />
           ))}

@@ -62,6 +62,18 @@
 .quote-mobile {
   display: none;
 }
+.testimonials-section[data-static="true"] .quote-wall {
+  height: auto;
+  max-height: 530px;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  mask-image: none;
+}
+.testimonials-section[data-static="true"] .quote-column,
+.testimonials-section[data-static="true"] .quote-track {
+  height: auto;
+  overflow: visible;
+}
 @media (max-width: 700px) {
   .quote-wall {
     display: none;
@@ -1406,18 +1418,5 @@ svg {
   }
   .testimonial-roll {
     animation: none !important;
-  }
-  .testimonial-wall {
-    height: auto;
-    max-height: 550px;
-    overflow-y: auto;
-    mask-image: none;
-  }
-  .testimonial-column {
-    height: auto;
-    overflow: visible;
-  }
-  .testimonial-clone {
-    display: none !important;
   }
 }
