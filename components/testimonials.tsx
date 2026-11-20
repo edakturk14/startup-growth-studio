@@ -99,7 +99,8 @@ function QuoteColumn({
         playOnInit: false,
         startDelay: 0,
         stopOnInteraction: true,
-        stopOnFocusIn: false,
+        // Stop synchronously before Embla scrolls to a keyboard-focused quote.
+        stopOnFocusIn: true,
       }),
     ],
   );

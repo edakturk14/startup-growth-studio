@@ -26,7 +26,8 @@ export function WorkCarousel() {
         playOnInit: false,
         startDelay: 0,
         stopOnInteraction: true,
-        stopOnFocusIn: false,
+        // Stop synchronously on slideFocusStart, before Embla's focus jump.
+        stopOnFocusIn: true,
       }),
     ],
   );
