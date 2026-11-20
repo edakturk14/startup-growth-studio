@@ -86,7 +86,7 @@ export function WorkCarousel() {
     };
   }, [api, paused]);
 
-  function navigate(direction: number, keyboard = false) {
+  function navigate(direction: number, keyboard = false, moveFocus = false) {
     if (!api) return;
     pointerSelectionPending.current = false;
     const next =
@@ -96,6 +96,11 @@ export function WorkCarousel() {
     setSelected(next);
     setPosition(next);
     api.scrollTo(next, reduced || keyboard);
+    if (moveFocus) {
+      root.current
+        ?.querySelectorAll<HTMLButtonElement>(".project-select")
+        [next]?.focus({ preventScroll: true });
+    }
   }
 
   return (
@@ -155,7 +160,7 @@ export function WorkCarousel() {
         onKeyDown={(event) => {
           if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
             event.preventDefault();
-            navigate(event.key === "ArrowRight" ? 1 : -1, true);
+            navigate(event.key === "ArrowRight" ? 1 : -1, true, true);
           }
         }}
       >
