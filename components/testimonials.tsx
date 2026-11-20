@@ -3,7 +3,7 @@
 import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { type Testimonial } from "@/lib/content";
 import { PlaybackIcon, Arrow } from "./icons";
 import { useMotionState } from "./motion";
@@ -75,10 +75,12 @@ function QuoteColumn({
   entries,
   index,
   paused,
+  onPlaybackAvailability,
 }: {
   entries: (Testimonial | null)[];
   index: number;
   paused: boolean;
+  onPlaybackAvailability: (index: number, available: boolean) => void;
 }) {
   const [viewport, api] = useEmblaCarousel(
     {
@@ -100,6 +102,26 @@ function QuoteColumn({
       }),
     ],
   );
+  useEffect(() => {
+    if (!api) return;
+    const reportAvailability = () => {
+      onPlaybackAvailability(
+        index,
+        Boolean(
+          api.plugins()?.autoScroll &&
+            api.scrollSnapList().length > 1 &&
+            api.internalEngine().options.active &&
+            api.internalEngine().options.loop,
+        ),
+      );
+    };
+    reportAvailability();
+    api.on("reInit", reportAvailability);
+    return () => {
+      api.off("reInit", reportAvailability);
+      onPlaybackAvailability(index, false);
+    };
+  }, [api, index, onPlaybackAvailability]);
   useEffect(() => {
     if (!api) return;
     const playback = () => {
@@ -140,6 +162,18 @@ export function Testimonials({
   const [motionOptIn, setMotionOptIn] = useState(false);
   const [interacting, setInteracting] = useState(false);
   const [focused, setFocused] = useState(false);
+  const [playableColumns, setPlayableColumns] = useState<number[]>([]);
+  const reportPlaybackAvailability = useCallback(
+    (index: number, available: boolean) => {
+      setPlayableColumns((previous) => {
+        if (previous.includes(index) === available) return previous;
+        return available
+          ? [...previous, index]
+          : previous.filter((column) => column !== index);
+      });
+    },
+    [],
+  );
   const preferencePaused = reduced && !motionOptIn;
   const paused =
     manualPause ||
@@ -171,19 +205,21 @@ export function Testimonials({
           <span className="eyebrow">Feedback on our founder’s work.</span>
           <h2>In their words.</h2>
         </div>
-        <button
-          className="playback-button testimonial-playback"
-          onClick={() => {
-            if (manualPause || preferencePaused) {
-              setManualPause(false);
-              setMotionOptIn(true);
-            } else setManualPause(true);
-          }}
-          aria-label={`${manualPause || preferencePaused ? "Play" : "Pause"} testimonials`}
-        >
-          <PlaybackIcon paused={manualPause || preferencePaused} />
-          {manualPause || preferencePaused ? "Play" : "Pause"}
-        </button>
+        {playableColumns.length > 0 && (
+          <button
+            className="playback-button testimonial-playback"
+            onClick={() => {
+              if (manualPause || preferencePaused) {
+                setManualPause(false);
+                setMotionOptIn(true);
+              } else setManualPause(true);
+            }}
+            aria-label={`${manualPause || preferencePaused ? "Play" : "Pause"} testimonials`}
+          >
+            <PlaybackIcon paused={manualPause || preferencePaused} />
+            {manualPause || preferencePaused ? "Play" : "Pause"}
+          </button>
+        )}
       </div>
       {preview && (
         <p className="preview-notice">
@@ -209,6 +245,7 @@ export function Testimonials({
               entries={column}
               index={index}
               paused={paused}
+              onPlaybackAvailability={reportPlaybackAvailability}
               key={index}
             />
           ))}
