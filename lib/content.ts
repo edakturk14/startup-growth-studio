@@ -28,6 +28,7 @@ export const testimonials = (testimonialData as Testimonial[]).filter(
     entry.author &&
     entry.handle &&
     entry.avatar &&
+    (entry.context === "founder-work" || entry.context === "studio-work") &&
     /^https:\/\/(x\.com|twitter\.com)\/.+\/status\/\d+/.test(entry.postUrl),
 );
 export const testimonialPreview =
