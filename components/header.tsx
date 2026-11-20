@@ -35,7 +35,7 @@ export function Header({ showTestimonials }: { showTestimonials: boolean }) {
       if (!header.current?.contains(event.target as Node)) setOpen(false);
     };
     const escape = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
+      if (event.key === "Escape" && open) {
         setOpen(false);
         menuButton.current?.focus();
       }
@@ -52,7 +52,7 @@ export function Header({ showTestimonials }: { showTestimonials: boolean }) {
       document.removeEventListener("keydown", escape);
       window.removeEventListener("resize", resize);
     };
-  }, []);
+  }, [open]);
 
   return (
     <header
