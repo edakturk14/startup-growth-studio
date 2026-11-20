@@ -7,8 +7,25 @@ import { Arrow } from "./icons";
 export function Wordmark() {
   return (
     <span className="wordmark">
-      <span>{site.brandName.toLowerCase()}</span>
-      <span className="wordmark-suffix">{site.brandSuffix}</span>
+      <svg
+        className="brand-mark"
+        width="30"
+        height="28"
+        viewBox="0 0 30 28"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        aria-hidden="true"
+      >
+        <circle cx="10.5" cy="14" r="7" />
+        <circle cx="19.5" cy="14" r="7" />
+      </svg>
+      <span className="wordmark-type">
+        <span className="wordmark-name">{site.brandName.toLowerCase()}</span>
+        {site.brandSuffix && (
+          <span className="wordmark-suffix">{site.brandSuffix}</span>
+        )}
+      </span>
     </span>
   );
 }
@@ -34,22 +51,14 @@ export function Header({ showTestimonials }: { showTestimonials: boolean }) {
     const closeOutside = (event: PointerEvent) => {
       if (!header.current?.contains(event.target as Node)) setOpen(false);
     };
-    const escape = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        setOpen(false);
-        menuButton.current?.focus();
-      }
-    };
     const resize = () => {
       if (window.innerWidth > 700) setOpen(false);
     };
     document.addEventListener("pointerdown", closeOutside);
-    document.addEventListener("keydown", escape);
     window.addEventListener("resize", resize);
     return () => {
       window.removeEventListener("scroll", update);
       document.removeEventListener("pointerdown", closeOutside);
-      document.removeEventListener("keydown", escape);
       window.removeEventListener("resize", resize);
     };
   }, []);
@@ -58,6 +67,16 @@ export function Header({ showTestimonials }: { showTestimonials: boolean }) {
     <header
       ref={header}
       className={`site-header ${scrolled ? "is-scrolled" : ""}`}
+      onKeyDown={(event) => {
+        if (event.key === "Escape" && open) {
+          setOpen(false);
+          menuButton.current?.focus();
+        }
+      }}
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget as Node))
+          setOpen(false);
+      }}
     >
       <a
         href="#top"
@@ -95,14 +114,6 @@ export function Header({ showTestimonials }: { showTestimonials: boolean }) {
         aria-label="Mobile navigation"
         className="mobile-nav"
         hidden={!open}
-        onBlur={(event) => {
-          if (
-            !event.currentTarget.parentElement?.contains(
-              event.relatedTarget as Node,
-            )
-          )
-            setOpen(false);
-        }}
       >
         {links.map((link) => (
           <a key={link.href} href={link.href} onClick={() => setOpen(false)}>

@@ -1,4 +1,6 @@
-# Ship & Tell Studio
+# Oruva
+
+An exploratory single-word naming direction for Eda’s growth studio. The dark background, warm-sand accent, centered header, original work, and community/content/strategy positioning are retained.
 
 A standalone studio website built with Next.js App Router, TypeScript, and Tailwind CSS, using the original handoff assets. This does not change edatweets.com.
 
@@ -83,7 +85,9 @@ Alternatively, enable `showTestimonialPlaceholders` in the config during develop
 - The mobile menu closes with Escape, outside click, navigation, focus exit, and desktop resize. Native smooth anchors account for the sticky header. Visible focus rings and a skip link support keyboard users.
 - The collaboration FAQ uses native details/summary controls, including keyboard and no-JavaScript support; no invented prices or subscription terms.
 - Services use a sticky desktop heading and native-scroll-driven focus between three readable rows. There is no scroll lock or wheel interception; reduced motion and no-JavaScript rendering keep the full static content.
-- The hero enters in a slower 950ms stagger; scroll reveals use 18px movement and 850ms easing. Service, image, and button hover effects stay subtle, with image zoom limited to 1.02x. Reduced motion removes entrances and transitions. Server-rendered content remains readable without JavaScript.
+- The hero enters in a deliberate 900ms stagger, separated by 80ms and 60ms; scroll reveals use 12px movement and 600ms easing. Button presses take 160ms; hover image zoom is limited to 1.02x over 250ms. Reduced motion removes movement, including hover and pressed transforms. Server-rendered content remains readable without JavaScript.
+- The mobile menu enters from its trigger at 98% scale over 200ms and exits in 140ms, using native hidden state with progressive CSS discrete transitions. Unsupported browsers retain an immediate, usable menu. Keyboard menu interaction and project navigation are immediate.
+- Hover effects only apply to hover-capable fine pointers. Controls have 44px heights, images have neutral inset outlines, and nested header corners use concentric radii.
 
 The approved mockup supplies layout direction, not production text or photographs. Original work images use `next/image`, preserve aspect ratios, and load lazily below the fold. Eda’s original portrait appears only in About. No invented client marks, pricing, team, quotes, or domain are included.
 

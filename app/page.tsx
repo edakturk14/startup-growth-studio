@@ -23,7 +23,8 @@ export default function Home() {
         <section className="hero container" aria-labelledby="hero-title">
           <h1 id="hero-title">
             A growth studio
-            <br className="desktop-break" /> for startups.
+            <br className="desktop-break" />{" "}
+            <span className="hero-emphasis">for startups.</span>
           </h1>
           <p className="hero-copy">
             We help startups grow through community, content, and strategy.

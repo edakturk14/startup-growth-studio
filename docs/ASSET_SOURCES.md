@@ -21,6 +21,17 @@ Experience logos were added at Eda’s request and identify her background, not 
 
 ## Design references
 
+- [Jakub Krehel’s Better UI](https://github.com/jakubkrehel/skills/tree/672ae44ace6aaed65b86cbb1e2fd6fbea0e79578/skills/better-ui): read directly from the upstream skill and its surfaces/icons references. Applied concentric corners, exact neutral image outlines, dark shadow rings with forced-color borders, optical button padding, consistent icon strokes, and hover gating.
+- [Emil Kowalski’s design-engineering guidance](https://github.com/emilkowalski/skills/blob/64eb3deb9a5fbfa041faf783e0bc3fd635872e9c/skills/emil-design-eng/SKILL.md): read directly from the upstream skill. Applied interruptible CSS transitions, responsive press feedback, trigger-origin menu motion with faster exits, compact entrance staggering, immediate keyboard interactions, and reduced-motion safeguards. No animation dependency was added. The linked upstream skills are not installed plugins; their source guidance was applied directly.
+
+| Before | After | Why |
+| --- | --- | --- |
+| Independent 8px header and 4px button corners | 11px outer radius, 4px inner radius, 6px inset and 1px border | Concentric corners make the floating header coherent. |
+| Ungated hover selectors and long interaction transitions | Hover-capable pointer gating and 140–250ms menu/button/image feedback | Touch does not retain accidental hover styling; feedback follows intent. |
+| No button press response | 160ms transition to 0.97 scale on pointer press | A small, interruptible acknowledgement without delaying the action. |
+| Small uniform hero type | Responsive 36–68px headline with warm-sand emphasis | A clear pitch leads; service copy and the three pillars are unchanged. |
+| Global Escape handler redirected focus even with a closed menu | Escape is handled only inside an open header menu | Unrelated keyboard actions keep their focus. |
+
 - https://www.pinterest.com/pin/1107181889670836129/: Eda’s Services scroll-motion reference, showing a sticky feature presentation and scroll-driven emphasis. Adapted with original service text, native scrolling, and static reduced-motion/no-JavaScript fallbacks; no reference artwork or footage is shipped.
 
 - https://www.withghost.co/: Eda’s reference for a direct, studio-led content flow; adapted as pitch → proof → founder → services → engagement → contact, without copying its claims, team, prices, clients, or testimonials.
