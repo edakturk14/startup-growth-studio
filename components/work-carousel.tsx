@@ -26,7 +26,7 @@ export function WorkCarousel() {
         playOnInit: false,
         startDelay: 0,
         stopOnInteraction: true,
-        stopOnFocusIn: false,
+        stopOnFocusIn: true,
       }),
     ],
   );
@@ -88,6 +88,7 @@ export function WorkCarousel() {
     setManualPause(true);
     setSelected(next);
     setPosition(next);
+    api.plugins().autoScroll.stop();
     api.scrollTo(next, reduced || instant);
   }
 
