@@ -1,10 +1,120 @@
 "use client";
 
 import Image from "next/image";
-import { useRef, useState } from "react";
+import useEmblaCarousel from "embla-carousel-react";
+import AutoScroll from "embla-carousel-auto-scroll";
+import { useEffect, useRef, useState } from "react";
 import { type Testimonial } from "@/lib/content";
 import { PlaybackIcon, Arrow } from "./icons";
 import { useMotionState } from "./motion";
+
+function QuoteCard({ entry }: { entry: Testimonial | null }) {
+  return (
+    <article className={`quote-card ${entry ? "" : "placeholder-card"}`}>
+      <span className="quote-mark" aria-hidden="true">
+        “
+      </span>
+      {entry ? (
+        <>
+          <blockquote>{entry.quote}</blockquote>
+          <div className="quote-author">
+            <Image
+              src={entry.avatar}
+              alt=""
+              width={36}
+              height={36}
+              unoptimized
+            />
+            <div>
+              <p>{entry.author}</p>
+              <span>{entry.handle}</span>
+              {(entry.role || entry.company) && (
+                <span>
+                  {[entry.role, entry.company].filter(Boolean).join(" · ")}
+                </span>
+              )}
+            </div>
+          </div>
+          <div className="quote-source">
+            <span>
+              {entry.context === "founder-work"
+                ? "Founder’s work"
+                : "Studio work"}
+              {entry.date && (
+                <>
+                  {" "}
+                  · <time dateTime={entry.date}>{entry.date}</time>
+                </>
+              )}
+            </span>
+            <a href={entry.postUrl} target="_blank" rel="noreferrer">
+              View original post <Arrow diagonal />
+            </a>
+          </div>
+        </>
+      ) : (
+        <>
+          <p className="placeholder-label">Testimonial placeholder</p>
+          <p className="placeholder-copy">
+            A verified quote and its original post will appear here.
+          </p>
+          <div className="quote-author">
+            <span className="avatar-placeholder" aria-hidden="true" />
+            <div>
+              <p>Author details</p>
+              <span>Not an endorsement</span>
+            </div>
+          </div>
+        </>
+      )}
+    </article>
+  );
+}
+
+function QuoteColumn({
+  entries,
+  index,
+  paused,
+}: {
+  entries: (Testimonial | null)[];
+  index: number;
+  paused: boolean;
+}) {
+  const [viewport, api] = useEmblaCarousel(
+    {
+      axis: "y",
+      loop: true,
+      dragFree: true,
+      align: "start",
+      containScroll: false,
+      breakpoints: { "(max-width: 700px)": { active: false } },
+    },
+    [
+      AutoScroll({
+        speed: 0.24,
+        direction: index % 2 ? "backward" : "forward",
+        playOnInit: false,
+        startDelay: 0,
+        stopOnInteraction: true,
+        stopOnFocusIn: false,
+      }),
+    ],
+  );
+  useEffect(() => {
+    if (!api) return;
+    if (paused) api.plugins().autoScroll.stop();
+    else api.plugins().autoScroll.play(0);
+  }, [api, paused]);
+  return (
+    <div ref={viewport} className="quote-column">
+      <div className="quote-track">
+        {entries.map((entry, row) => (
+          <QuoteCard entry={entry} key={entry?.id ?? row} />
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export function Testimonials({
   entries,
@@ -31,80 +141,11 @@ export function Testimonials({
     preview && entries.length === 0
       ? Array.from({ length: 9 }, () => null)
       : entries;
-  const columns = Array.from({ length: 3 }, (_, index) =>
-    rows.filter((_, row) => row % 3 === index),
+  const count = Math.min(3, rows.length);
+  const columns = Array.from({ length: count }, (_, index) =>
+    rows.filter((_, row) => row % count === index),
   );
-
-  function card(entry: Testimonial | null, index: number, clone = false) {
-    return (
-      <article
-        className={`quote-card ${entry ? "" : "placeholder-card"}`}
-        key={`${entry?.id ?? index}-${clone}`}
-      >
-        <span className="quote-mark" aria-hidden="true">
-          “
-        </span>
-        {entry ? (
-          <>
-            <blockquote>{entry.quote}</blockquote>
-            <div className="quote-author">
-              <Image
-                src={entry.avatar}
-                alt=""
-                width={36}
-                height={36}
-                unoptimized
-              />
-              <div>
-                <p>{entry.author}</p>
-                <span>{entry.handle}</span>
-                {(entry.role || entry.company) && (
-                  <span>
-                    {[entry.role, entry.company].filter(Boolean).join(" · ")}
-                  </span>
-                )}
-              </div>
-            </div>
-            <div className="quote-source">
-              <span>
-                {entry.context === "founder-work"
-                  ? "Founder’s work"
-                  : "Studio work"}
-                {entry.date && (
-                  <>
-                    {" "}
-                    · <time dateTime={entry.date}>{entry.date}</time>
-                  </>
-                )}
-              </span>
-              <a
-                href={entry.postUrl}
-                target="_blank"
-                rel="noreferrer"
-                tabIndex={clone ? -1 : 0}
-              >
-                View original post <Arrow diagonal />
-              </a>
-            </div>
-          </>
-        ) : (
-          <>
-            <p className="placeholder-label">Testimonial placeholder</p>
-            <p className="placeholder-copy">
-              A verified quote and its original post will appear here.
-            </p>
-            <div className="quote-author">
-              <span className="avatar-placeholder" aria-hidden="true" />
-              <div>
-                <p>Author details</p>
-                <span>Not an endorsement</span>
-              </div>
-            </div>
-          </>
-        )}
-      </article>
-    );
-  }
+  useEffect(() => setMotionOptIn(false), [reduced]);
 
   return (
     <section
@@ -120,7 +161,7 @@ export function Testimonials({
           <h2>In their words.</h2>
         </div>
         <button
-          className="playback-button"
+          className="playback-button testimonial-playback"
           onClick={() => {
             if (manualPause || preferencePaused) {
               setManualPause(false);
@@ -139,7 +180,6 @@ export function Testimonials({
         </p>
       )}
       <div
-        className="testimonial-wall"
         onMouseEnter={() => setInteracting(true)}
         onMouseLeave={() => setInteracting(false)}
         onFocusCapture={() => setFocused(true)}
@@ -147,27 +187,29 @@ export function Testimonials({
           if (!event.currentTarget.contains(event.relatedTarget as Node))
             setFocused(false);
         }}
-        onTouchStart={() => setManualPause(true)}
+        onPointerDown={() => setManualPause(true)}
       >
-        {columns.map((column, index) => (
-          <div className="testimonial-column" key={index}>
-            <div className="testimonial-roll">
-              <div className="testimonial-group">
-                {column.map((entry, row) => card(entry, row))}
-              </div>
-              <div
-                className="testimonial-group testimonial-clone"
-                aria-hidden="true"
-                inert
-              >
-                {column.map((entry, row) => card(entry, row, true))}
-              </div>
-            </div>
-          </div>
-        ))}
+        <div
+          className="quote-wall"
+          style={{ gridTemplateColumns: `repeat(${count}, minmax(0, 1fr))` }}
+        >
+          {columns.map((column, index) => (
+            <QuoteColumn
+              entries={column}
+              index={index}
+              paused={paused}
+              key={index}
+            />
+          ))}
+        </div>
+        <div className="quote-mobile">
+          {rows.map((entry, index) => (
+            <QuoteCard entry={entry} key={entry?.id ?? index} />
+          ))}
+        </div>
       </div>
       <noscript>
-        <style>{`.testimonial-roll{animation:none!important}.testimonial-clone{display:none!important}.testimonial-wall{height:auto!important;mask-image:none!important}.testimonial-column{height:auto!important}`}</style>
+        <style>{`.quote-wall{height:auto!important;mask-image:none!important}.quote-column{height:auto!important;overflow:visible!important}.testimonial-playback{display:none}`}</style>
       </noscript>
     </section>
   );

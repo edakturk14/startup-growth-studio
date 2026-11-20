@@ -1,5 +1,80 @@
 @import "tailwindcss";
 
+/* Clone-free loops: Embla repositions original, fully interactive cards. */
+.project-viewport {
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 6px 2px 2px;
+  margin: -6px -2px 0;
+}
+.enhanced .project-viewport {
+  overflow: hidden;
+}
+.project-viewport .project-track {
+  overflow: visible;
+  padding: 0;
+  margin: 0;
+  touch-action: pan-y pinch-zoom;
+}
+.project-viewport .project-card {
+  min-width: 0;
+}
+.footer-socials {
+  display: flex;
+  gap: 16px;
+  font-size: 11px;
+  color: var(--muted);
+}
+.quote-wall {
+  display: grid;
+  gap: 20px;
+  height: 530px;
+  overflow: hidden;
+  mask-image: linear-gradient(transparent, #000 8%, #000 92%, transparent);
+}
+.quote-column {
+  overflow: hidden;
+  height: 530px;
+  touch-action: pan-x pinch-zoom;
+}
+.quote-track {
+  display: flex;
+  flex-direction: column;
+}
+.quote-track > .quote-card {
+  flex: 0 0 auto;
+  min-height: 250px;
+  margin-bottom: 18px;
+}
+.quote-column:nth-child(2) .quote-card {
+  padding-block: 40px;
+}
+.quote-column:nth-child(3) .quote-card {
+  padding-block: 32px;
+}
+.quote-mobile {
+  display: none;
+}
+@media (max-width: 700px) {
+  .quote-wall {
+    display: none;
+  }
+  .quote-mobile {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 4px 2px 12px;
+  }
+  .quote-mobile > .quote-card {
+    flex: 0 0 88%;
+    scroll-snap-align: start;
+  }
+  .testimonial-playback {
+    visibility: hidden;
+  }
+}
+
 :root {
   --bg: #101110;
   --surface: #181a17;
