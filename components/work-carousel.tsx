@@ -79,7 +79,7 @@ export function WorkCarousel() {
     };
   }, [api, paused]);
 
-  function navigate(direction: number) {
+  function navigate(direction: number, instant = false) {
     if (!api) return;
     pointerSelectionPending.current = false;
     const next =
@@ -88,7 +88,7 @@ export function WorkCarousel() {
     setManualPause(true);
     setSelected(next);
     setPosition(next);
-    api.scrollTo(next, reduced);
+    api.scrollTo(next, reduced || instant);
   }
 
   return (
@@ -101,7 +101,7 @@ export function WorkCarousel() {
     >
       <div className="carousel-toolbar">
         <p className="carousel-hint">
-          A few things we’ve helped bring to life.
+          From our founder’s workbench.
           <span> Hover or tap to explore.</span>
         </p>
         <div className="carousel-controls">
@@ -128,14 +128,14 @@ export function WorkCarousel() {
           </button>
           <button
             className="icon-button previous"
-            onClick={() => navigate(-1)}
+            onClick={(event) => navigate(-1, event.detail === 0)}
             aria-label="Previous project"
           >
             <Arrow />
           </button>
           <button
             className="icon-button"
-            onClick={() => navigate(1)}
+            onClick={(event) => navigate(1, event.detail === 0)}
             aria-label="Next project"
           >
             <Arrow />
@@ -148,7 +148,7 @@ export function WorkCarousel() {
         onKeyDown={(event) => {
           if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
             event.preventDefault();
-            navigate(event.key === "ArrowRight" ? 1 : -1);
+            navigate(event.key === "ArrowRight" ? 1 : -1, true);
           }
         }}
       >

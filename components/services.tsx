@@ -55,7 +55,9 @@ export function Services() {
       data-reveal
     >
       <div className="services-intro">
+        <span className="eyebrow section-label"><span>02</span> Our practice</span>
         <h2 id="services-title">How we help</h2>
+        <p className="services-description">The right pieces.<br />Thoughtfully put together.</p>
         <div className="services-progress" aria-hidden="true">
           <span key={active}>{String(active + 1).padStart(2, "0")}</span>
           <span>/ {String(services.length).padStart(2, "0")}</span>
@@ -69,12 +71,15 @@ export function Services() {
             key={service.title}
           >
             <span className="service-index" aria-hidden="true">
-              0{index + 1}
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5">
+                {index === 0 ? <><path d="M6 6h12v12H6zM14 14h12v12H14z" /><path d="M10 22H6v4h4M22 10h4V6h-4" /></> : index === 1 ? <><path d="M6 5h20v22H6zM11 11h10M11 16h10M11 21h6" /></> : <><path d="M5 26 26 5M7 5h19v19M5 16v10h10" /><path d="M12 5H7v5M26 20v5h-5" /></>}
+              </svg>
             </span>
             <div>
               <h3>{service.title}</h3>
               <p>{service.description}</p>
             </div>
+            <span className="service-number" aria-hidden="true">0{index + 1}</span>
           </article>
         ))}
       </div>

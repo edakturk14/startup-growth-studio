@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { description, site } from "@/lib/content";
 import "./globals.css";
+import "./formwork.css";
 
 const inter = localFont({
   src: "./fonts/Inter.ttf",
