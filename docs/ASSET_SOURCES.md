@@ -21,6 +21,8 @@ Experience logos were added at Eda’s request and identify her background, not 
 
 ## Design references
 
+- https://www.withghost.co/: Eda’s reference for a direct, studio-led content flow; adapted as pitch → proof → founder → services → engagement → contact, without copying its claims, team, prices, clients, or testimonials.
+
 - `docs/approved-mockup.png`: generated design mockup approved in this conversation. Use for layout and brand direction only. Its rasterized text and recreated photos must not be used as production assets.
 - `docs/testimonial-reference.png`: user-provided screenshot of a testimonial-wall style. Use its layout and card treatment only. Its people and quotes are not endorsements of Eda or this studio.
 

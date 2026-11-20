@@ -2,29 +2,27 @@
   "options": [
     {
       "title": "Project-based",
-      "description": "For a launch, content series, or onboarding review, with a clear scope and handoff."
+      "description": "One launch, content series, or onboarding review. A clear scope, a focused push.",
+      "cta": "Talk through a project"
     },
     {
       "title": "Ongoing partnership",
-      "description": "For consistent support across content, DevRel, and growth, with priorities we review together."
+      "description": "A steady partner for content, DevRel, and growth as your product evolves.",
+      "cta": "Explore ongoing support"
     }
   ],
   "steps": [
     {
       "title": "Initial kickoff call",
-      "description": "We talk through your product, audience, goals, and where you need support."
+      "description": "Your product, goals, and where you need support."
     },
     {
       "title": "Scope & plan",
-      "description": "We agree on priorities, deliverables, and a timeline that fits your team."
+      "description": "A clear scope and a timeline that fits."
     },
     {
       "title": "Create & deliver",
-      "description": "I work with your team on the agreed scope, sharing drafts and progress along the way."
-    },
-    {
-      "title": "Review & next steps",
-      "description": "We review the work, make refinements, and decide what comes next."
+      "description": "Drafts, feedback, refinements, and a clear handoff."
     }
   ]
 }
