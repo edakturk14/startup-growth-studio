@@ -21,8 +21,8 @@ export default async function SocialImage() {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: 70,
-          background: "#FCFCFC",
-          color: "#050505",
+          background: "#101110",
+          color: "#F0EFE7",
           fontFamily: "Inter",
         }}
       >
@@ -41,7 +41,7 @@ export default async function SocialImage() {
         >
           A growth studio for technical startups.
         </div>
-        <div style={{ display: "flex", color: "#616161", fontSize: 22 }}>
+        <div style={{ display: "flex", color: "#E8D5B0", fontSize: 22 }}>
           Complex products. Clear stories.
         </div>
       </div>

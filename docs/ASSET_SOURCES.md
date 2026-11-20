@@ -38,7 +38,7 @@ Project descriptions and links in `content/projects.json` are grounded in these 
 
 ## Typography inspection
 
-Eda’s later palette/header request supersedes the initial dark palette: the live Skroll page was inspected on November 20, 2026, with an off-white `#FCFCFC` background, gray `#616161` navigation, black buttons, and a compact centered floating header. Ship & Tell uses that light monochrome direction with its own wordmark, navigation, and contact destination; no Skroll artwork, prices, or claims are reused.
+The live Skroll page was inspected on November 20, 2026, with an off-white `#FCFCFC` background, gray `#616161` navigation, black buttons, and a compact centered floating header. After trying that palette, Eda chose to restore the dark theme with warm-sand accents while keeping the compact centered header. Ship & Tell retains its own wordmark, navigation, and contact destination; no Skroll artwork, prices, or claims are reused.
 
 On https://skroll.studio/#work, browser-computed styles showed Inter for the hero and supporting copy. Hero: weight 500, 19px, 28px line height, 0.08px letter spacing at the inspected desktop viewport. Supporting text: weight 400, 15px, 24px line height. Use the same font family and weights, with the readable responsive sizes specified in the build brief. These are observed values, not a demand to copy every size.
 
