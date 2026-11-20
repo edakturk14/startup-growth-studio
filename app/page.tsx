@@ -106,7 +106,7 @@ export default function Home() {
             </div>
             <div className="about-copy">
               <span className="eyebrow">About the studio</span>
-              <h2>Hi, I’m {site.founder.name}.</h2>
+              <h2>Hi, I’m {site.founder.firstName}!</h2>
               <p>
                 I make technical products easier to understand, use, and adopt.
                 I work with technical teams on product communications, technical

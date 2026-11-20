@@ -7,6 +7,7 @@
   "bookingUrl": null,
   "canonicalUrl": null,
   "founder": {
+    "firstName": "Eda",
     "name": "Eda Akturk",
     "image": "/images/eda-cryptist.webp",
     "website": "https://www.edatweets.com/"
