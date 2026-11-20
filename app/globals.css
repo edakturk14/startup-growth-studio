@@ -714,6 +714,21 @@ svg {
   font-size: 13px;
   letter-spacing: -0.025em;
 }
+.experience li {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 34px;
+  white-space: nowrap;
+}
+.experience-logo {
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: grayscale(1);
+  opacity: 0.8;
+  transition: opacity 0.4s;
+}
+.experience li:hover .experience-logo { opacity: 1; }
 .contact-section {
   text-align: center;
   padding-block: 72px 54px;

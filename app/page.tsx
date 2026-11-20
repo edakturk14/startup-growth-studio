@@ -1,5 +1,6 @@
 import Image from "next/image";
 import services from "@/content/services.json";
+import experience from "@/content/experience.json";
 import {
   site,
   showTestimonials,
@@ -120,11 +121,18 @@ export default function Home() {
               <div className="experience">
                 <span className="eyebrow">Experience</span>
                 <ul aria-label="Professional experience">
-                  {["Hyperlane", "BuidlGuidl", "World Bank Group", "Cisco"].map(
-                    (name) => (
-                      <li key={name}>{name}</li>
-                    ),
-                  )}
+                  {experience.map((company) => (
+                    <li key={company.name}>
+                      <Image
+                        src={company.logo}
+                        alt={company.wordmark ? company.name : ""}
+                        width={company.width}
+                        height={company.height}
+                        className="experience-logo"
+                      />
+                      {!company.wordmark && <span>{company.name}</span>}
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>

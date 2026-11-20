@@ -33,6 +33,7 @@ Deploy as a standard Next.js app to a compatible Node host or import the repo in
 | `content/site-config.json`  | Brand, suffix, full name, location, email, optional booking/canonical URLs, social links, founder information, and feature flag. |
 | `content/services.json`     | Service headings and descriptions.                                                                                               |
 | `content/projects.json`     | Original images, roles, descriptions, categories, and destination links.                                                         |
+| `content/experience.json`   | Experience names and bundled logo dimensions; separate from clients and endorsements.                                           |
 | `content/testimonials.json` | Verified testimonials only; initially empty.                                                                                     |
 | `public/images/`            | Original founder and project images.                                                                                             |
 | `app/globals.css`           | Palette tokens, typography, responsive layout, and motion.                                                                       |

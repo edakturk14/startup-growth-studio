@@ -11,6 +11,13 @@ Original assets were retrieved from Eda’s website on November 20, 2026 for her
 | `public/images/ethgunu-team.jpg` | https://www.edatweets.com/assets/g-team.jpg |
 | `public/images/builder-show.webp` | https://www.edatweets.com/assets/thumbnails/builder-show-wide-960.webp |
 | `public/images/eda-cryptist.webp` | https://www.edatweets.com/assets/g-cryptist-speaking.webp |
+| `public/images/logos/hyperlane.png` | https://www.edatweets.com/assets/logos/hyperlane.png |
+| `public/images/logos/ethereum.png` | https://www.edatweets.com/assets/logos/ethereum.png |
+| `public/images/logos/world-bank.svg` | https://www.edatweets.com/assets/logos/world-bank.svg |
+| `public/images/logos/cisco.svg` | https://www.edatweets.com/assets/logos/cisco.svg |
+| `public/images/logos/buidlguidl.svg` | https://buidlguidl.com/assets/logo-white.svg |
+
+Experience logos were added at Eda’s request and identify her background, not studio clients or endorsements. The Ethereum Foundation experience is described on her source site as an EF grantee working with BuidlGuidl. The first-person About copy is from https://www.edatweets.com/.
 
 ## Design references
 
