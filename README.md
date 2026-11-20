@@ -34,6 +34,7 @@ Deploy as a standard Next.js app to a compatible Node host or import the repo in
 | `content/services.json`     | Service headings and descriptions.                                                                                               |
 | `content/projects.json`     | Original images, roles, descriptions, categories, and destination links.                                                         |
 | `content/experience.json`   | Experience names and bundled logo dimensions; separate from clients and endorsements.                                           |
+| `content/engagement.json`   | Project-based/ongoing options and the four-step collaboration process.                                                            |
 | `content/testimonials.json` | Verified testimonials only; initially empty.                                                                                     |
 | `public/images/`            | Original founder and project images.                                                                                             |
 | `app/globals.css`           | Palette tokens, typography, responsive layout, and motion.                                                                       |

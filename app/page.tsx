@@ -1,6 +1,7 @@
 import Image from "next/image";
 import services from "@/content/services.json";
 import experience from "@/content/experience.json";
+import engagement from "@/content/engagement.json";
 import {
   site,
   showTestimonials,
@@ -77,24 +78,30 @@ export default function Home() {
           )}
           <section className="section partnership-section" data-reveal>
             <span className="eyebrow">Ways to work together</span>
-            <h2>
-              A focused project.
-              <br className="mobile-break" /> An ongoing partnership.
-            </h2>
+            <h2>Project-based or ongoing.</h2>
             <div className="partnership-grid">
-              <p>
-                <span className="small-arrow" aria-hidden="true">
-                  ↗
-                </span>
-                For a specific launch, content series, or onboarding review.
-              </p>
-              <p>
-                <span className="small-arrow" aria-hidden="true">
-                  ↗
-                </span>
-                For consistent support across content, DevRel, and growth.
-              </p>
+              {engagement.options.map((option) => (
+                <article key={option.title}>
+                  <h3>{option.title}</h3>
+                  <p>{option.description}</p>
+                </article>
+              ))}
             </div>
+            <div className="process-heading">
+              <h3>How we’ll work together</h3>
+              <span className="eyebrow">From first call to next steps</span>
+            </div>
+            <ol className="process-steps">
+              {engagement.steps.map((step, index) => (
+                <li key={step.title}>
+                  <span className="process-number" aria-hidden="true">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <h4>{step.title}</h4>
+                  <p>{step.description}</p>
+                </li>
+              ))}
+            </ol>
           </section>
           <section id="about" className="section about-section" data-reveal>
             <div className="founder-image">

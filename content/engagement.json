@@ -1,0 +1,30 @@
+{
+  "options": [
+    {
+      "title": "Project-based",
+      "description": "For a launch, content series, or onboarding review, with a clear scope and handoff."
+    },
+    {
+      "title": "Ongoing partnership",
+      "description": "For consistent support across content, DevRel, and growth, with priorities we review together."
+    }
+  ],
+  "steps": [
+    {
+      "title": "Initial kickoff call",
+      "description": "We talk through your product, audience, goals, and where you need support."
+    },
+    {
+      "title": "Scope & plan",
+      "description": "We agree on priorities, deliverables, and a timeline that fits your team."
+    },
+    {
+      "title": "Create & deliver",
+      "description": "I work with your team on the agreed scope, sharing drafts and progress along the way."
+    },
+    {
+      "title": "Review & next steps",
+      "description": "We review the work, make refinements, and decide what comes next."
+    }
+  ]
+}

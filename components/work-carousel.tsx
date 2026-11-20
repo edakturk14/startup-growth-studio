@@ -237,7 +237,6 @@ export function WorkCarousel() {
         </div>
       </div>
       <div className="work-bottom">
-        <span className="eyebrow">Founder-led. Builder-minded.</span>
         <span className="carousel-count">
           {String(position + 1).padStart(2, "0")}{" "}
           <span>/ {String(projects.length).padStart(2, "0")}</span>
