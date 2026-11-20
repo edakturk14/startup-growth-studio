@@ -11,7 +11,7 @@ const inter = localFont({
 });
 
 export const metadata: Metadata = {
-  title: `${site.fullBrandName} — A growth studio for technical startups`,
+  title: `${site.fullBrandName} — A growth studio for startups`,
   description,
   ...(site.canonicalUrl
     ? {

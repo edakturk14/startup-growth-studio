@@ -28,6 +28,8 @@ Deploy as a standard Next.js app to a compatible Node host or import the repo in
 
 ## Content and branding
 
+The studio’s positioning is “A growth studio for startups,” with community, content, and strategy as equal service pillars. Past-work descriptions retain their original technical context.
+
 | File                        | What to edit                                                                                                                     |
 | --------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
 | `content/site-config.json`  | Brand, suffix, full name, location, email, optional booking/canonical URLs, social links, founder information, and feature flag. |

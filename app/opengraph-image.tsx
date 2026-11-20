@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { site } from "@/lib/content";
 
-export const alt = "A growth studio for technical startups.";
+export const alt = "A growth studio for startups.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -39,10 +39,10 @@ export default async function SocialImage() {
             lineHeight: 1.15,
           }}
         >
-          A growth studio for technical startups.
+          A growth studio for startups.
         </div>
         <div style={{ display: "flex", color: "#E8D5B0", fontSize: 22 }}>
-          Complex products. Clear stories.
+          Community. Content. Strategy.
         </div>
       </div>
     ),

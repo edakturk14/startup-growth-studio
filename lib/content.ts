@@ -35,4 +35,4 @@ export const testimonialPreview =
   (site.showTestimonialPlaceholders || process.env.TESTIMONIAL_PREVIEW === "1");
 export const showTestimonials = testimonials.length > 0 || testimonialPreview;
 export const description =
-  "A growth studio for technical startups. We turn complex ideas into clear stories that help people understand your product and start using it.";
+  "A growth studio for startups. We help teams grow through community building, content, and strategy—from shaping your story to bringing people together.";

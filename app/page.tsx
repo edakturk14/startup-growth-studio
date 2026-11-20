@@ -22,12 +22,11 @@ export default function Home() {
       <main id="main">
         <section className="hero container" aria-labelledby="hero-title">
           <h1 id="hero-title">
-            A growth studio for
-            <br className="desktop-break" /> technical startups.
+            A growth studio
+            <br className="desktop-break" /> for startups.
           </h1>
           <p className="hero-copy">
-            We turn complex ideas into clear stories that help people understand
-            your product and start using it.
+            We help startups grow through community, content, and strategy.
           </p>
           <div className="hero-actions">
             <a href="#contact" className="button button-primary">
@@ -64,10 +63,10 @@ export default function Home() {
               <span className="eyebrow">About the studio</span>
               <h2>Hi, I’m {site.founder.firstName}!</h2>
               <p>
-                I’m the founder of {site.brandName}. I make technical products
-                easier to understand, use, and adopt.
-                I work with technical teams on product communications, technical
-                content, developer experience, and community building.
+                I’m the founder of {site.brandName}. I work with startups on
+                community building, content, and growth strategy. I help teams
+                shape their story and bring people together around what they’re
+                building.
               </p>
               <p>
                 I joined Hyperlane as its first DevRel hire, later moving into
@@ -114,7 +113,7 @@ export default function Home() {
           </section>
           <section id="contact" className="section contact-section" data-reveal>
             <h2>Tell us what you’re building.</h2>
-            <p>Let’s find the right way to bring it to market.</p>
+            <p>Let’s find the right way to grow.</p>
             <a
               href={site.bookingUrl || `mailto:${site.email}`}
               className="button button-primary"
