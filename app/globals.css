@@ -375,10 +375,8 @@ svg {
 .orbit-middle { inset: 28px; border-style: dashed; border-color: #45463b; }
 .orbit-inner { inset: 57px; }
 .signal-art-center { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; text-align: center; }
-.signal-art-center > span:last-child { font-size: 26px; line-height: 1.3; letter-spacing: -0.045em; }
-.signal-art-center em { font-style: normal; color: var(--accent); }
-.signal-art-center .signal-mark { height: 39px; gap: 5px; }
-.signal-art-center .signal-mark i { width: 6px; border-radius: 3px; }
+.signal-art-center .signal-mark { height: 72px; gap: 8px; }
+.signal-art-center .signal-mark i { width: 11px; border-radius: 5.5px; }
 .signal-point { position: absolute; width: 9px; height: 9px; background: var(--accent); border-radius: 50%; top: 13%; right: 13%; box-shadow: 0 0 0 7px var(--bg); }
 .hero-footnote { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; padding: 29px 0; margin-top: 27px; }
 .hero-footnote > span { display: flex; align-items: center; gap: 15px; font-size: 12px; color: var(--muted); }
@@ -1159,9 +1157,8 @@ svg {
   .orbit-middle { inset: 20px; }
   .orbit-inner { inset: 40px; }
   .signal-art-center { gap: 12px; }
-  .signal-art-center > span:last-child { font-size: 20px; }
-  .signal-art-center .signal-mark { height: 28px; }
-  .signal-art-center .signal-mark i { width: 4px; }
+  .signal-art-center .signal-mark { height: 52px; gap: 6px; }
+  .signal-art-center .signal-mark i { width: 8px; border-radius: 4px; }
   .hero-footnote { margin-top: 10px; gap: 8px; padding-block: 22px; }
   .hero-footnote > span { gap: 7px; font-size: 10px; }
   .hero-footnote > span + span { padding-left: 10px; }
