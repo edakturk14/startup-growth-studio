@@ -106,16 +106,20 @@ export default function Home() {
             </div>
             <div className="about-copy">
               <span className="eyebrow">About the studio</span>
-              <h2>Founded by {site.founder.name}.</h2>
+              <h2>Hi, I’m {site.founder.name}.</h2>
               <p>
-                {site.brandName} is led by Eda, a developer turned marketer with
-                experience across technical sales, developer relations, and
-                product launches. She brings a technical background to the work
-                of explaining products and building developer communities.
+                I make technical products easier to understand, use, and adopt.
+                I work with technical teams on product communications, technical
+                content, developer experience, and community building.
+              </p>
+              <p>
+                I joined Hyperlane as its first DevRel hire, later moving into
+                product and partner engineering. At BuidlGuidl, I helped launch
+                developer programs and bring people together to build.
               </p>
               <div className="experience">
-                <span className="eyebrow">Founder’s experience</span>
-                <ul aria-label="Founder’s professional background">
+                <span className="eyebrow">Experience</span>
+                <ul aria-label="Professional experience">
                   {["Hyperlane", "BuidlGuidl", "World Bank Group", "Cisco"].map(
                     (name) => (
                       <li key={name}>{name}</li>
@@ -126,7 +130,6 @@ export default function Home() {
             </div>
           </section>
           <section id="contact" className="section contact-section" data-reveal>
-            <span className="eyebrow">The next chapter starts here</span>
             <h2>Tell us what you’re building.</h2>
             <p>Let’s find the right way to bring it to market.</p>
             <a
