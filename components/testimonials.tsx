@@ -103,8 +103,12 @@ function QuoteColumn({
   useEffect(() => {
     if (!api) return;
     const playback = () => {
-      if (paused) api.plugins().autoScroll.stop();
-      else api.plugins().autoScroll.play(0);
+      // Inactive mobile engines have no plugins; single-slide engines do not
+      // initialize AutoScroll. Keep undersized columns readable and static.
+      const autoScroll = api.plugins()?.autoScroll;
+      if (!autoScroll || api.scrollSnapList().length <= 1) return;
+      if (paused || !api.internalEngine().options.loop) autoScroll.stop();
+      else autoScroll.play(0);
     };
     playback();
     api.on("reInit", playback);
