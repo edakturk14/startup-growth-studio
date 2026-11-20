@@ -21,26 +21,30 @@ export default function Home() {
       <Header showTestimonials={showTestimonials} />
       <main id="main">
         <section className="hero container" aria-labelledby="hero-title">
-          <h1 id="hero-title">
-            A growth studio
-            <br className="desktop-break" /> for startups.
-          </h1>
-          <p className="hero-copy">
-            We help startups grow through community, content, and strategy.
-          </p>
-          <div className="hero-actions">
-            <a href="#contact" className="button button-primary">
-              Let’s talk <Arrow diagonal />
-            </a>
-            <a href="#services" className="underlined-link">
-              Explore our services <Arrow />
-            </a>
+          <div className="hero-frame" aria-hidden="true"><i /><i /><i /><i /></div>
+          <div className="hero-content">
+            <h1 id="hero-title">
+              A growth studio
+              <br /> for <span>startups.</span>
+            </h1>
+            <p className="hero-copy">
+              We help startups grow through community, content, and strategy.
+            </p>
+            <div className="hero-actions">
+              <a href="#contact" className="button button-primary">
+                Let’s talk <Arrow diagonal />
+              </a>
+              <a href="#services" className="underlined-link">
+                Explore our services <Arrow />
+              </a>
+            </div>
           </div>
         </section>
         <div className="container">
           <section id="work" className="section work-section" data-reveal>
             <div className="section-heading">
               <div>
+                <span className="eyebrow section-label"><span>01</span> Selected work</span>
                 <h2>Work behind the studio</h2>
                 <p>Selected projects led or co-created by our founder.</p>
               </div>
@@ -50,17 +54,21 @@ export default function Home() {
           {showTestimonials && (
             <Testimonials entries={testimonials} preview={testimonialPreview} />
           )}
+          <Services />
           <section id="about" className="section about-section" data-reveal>
-            <div className="founder-image">
-              <Image
-                src={site.founder.image}
-                alt={`${site.founder.name} speaking at Cryptİst`}
-                fill
-                sizes="(max-width: 700px) 240px, 300px"
-              />
+            <div className="founder-photo">
+              <div className="founder-image">
+                <Image
+                  src={site.founder.image}
+                  alt={`${site.founder.name} speaking at Cryptİst`}
+                  fill
+                  sizes="(max-width: 700px) 240px, 300px"
+                />
+              </div>
+              <p className="photo-caption">Eda Akturk <span>Founder</span></p>
             </div>
             <div className="about-copy">
-              <span className="eyebrow">About the studio</span>
+              <span className="eyebrow section-label"><span>03</span> About the studio</span>
               <h2>Hi, I’m {site.founder.firstName}!</h2>
               <p>
                 I’m the founder of {site.brandName}. I work with startups on
@@ -92,9 +100,11 @@ export default function Home() {
               </div>
             </div>
           </section>
-          <Services />
           <section id="faq" className="section faq-section" data-reveal>
-            <h2>FAQs</h2>
+            <div className="faq-intro">
+              <span className="eyebrow section-label"><span>04</span> A few details</span>
+              <h2>Good questions.<br />Clear answers.</h2>
+            </div>
             <div className="faq-list">
               {faq.map((item) => (
                 <details
@@ -112,8 +122,9 @@ export default function Home() {
             </div>
           </section>
           <section id="contact" className="section contact-section" data-reveal>
+            <span className="contact-mark" aria-hidden="true">↗</span>
             <h2>Tell us what you’re building.</h2>
-            <p>Let’s find the right way to grow.</p>
+            <p>Let&apos;s find the right way to bring it to market.</p>
             <a
               href={site.bookingUrl || `mailto:${site.email}`}
               className="button button-primary"

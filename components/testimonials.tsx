@@ -96,7 +96,7 @@ function QuoteColumn({
         playOnInit: false,
         startDelay: 0,
         stopOnInteraction: true,
-        stopOnFocusIn: false,
+        stopOnFocusIn: true,
       }),
     ],
   );
