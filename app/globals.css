@@ -80,13 +80,13 @@
 }
 
 :root {
-  --bg: #101110;
-  --surface: #181a17;
-  --text: #f0efe7;
-  --muted: #b8bbb4;
-  --border: #353732;
-  --accent: #e8d5b0;
-  --accent-fg: #231e16;
+  --bg: #fcfcfc;
+  --surface: #f5f5f5;
+  --text: #050505;
+  --muted: #616161;
+  --border: #e5e5e5;
+  --accent: #050505;
+  --accent-fg: #fcfcfc;
   --radius: 8px;
   --font: var(--font-inter), Arial, sans-serif;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
@@ -102,7 +102,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 115px;
-  color-scheme: dark;
+  color-scheme: light;
 }
 body {
   margin: 0;
@@ -133,7 +133,8 @@ a {
   touch-action: manipulation;
 }
 button:focus-visible,
-a:focus-visible {
+a:focus-visible,
+summary:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 5px;
 }
@@ -228,8 +229,8 @@ svg {
   color: var(--accent-fg);
 }
 .button-primary:hover {
-  background: var(--text);
-  box-shadow: 0 6px 24px rgb(232 213 176 / 10%);
+  background: #262626;
+  box-shadow: 0 6px 24px rgb(0 0 0 / 8%);
 }
 .button svg,
 .underlined-link svg,
@@ -263,27 +264,33 @@ svg {
 }
 .site-header {
   position: sticky;
-  top: 22px;
+  top: 24px;
   z-index: 20;
-  width: min(1160px, calc(100% - 96px));
-  margin: 22px auto 0;
-  min-height: 72px;
-  padding: 12px 20px;
+  width: fit-content;
+  max-width: calc(100% - 40px);
+  margin: 24px auto 0;
+  min-height: 52px;
+  padding: 6px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 35px;
-  border: 1px solid transparent;
+  gap: 26px;
+  border: 1px solid var(--border);
   border-radius: var(--radius);
   background: var(--bg);
-  transition:
-    border-color 0.3s,
-    background 0.3s;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 3%);
+  transition: box-shadow 0.3s;
 }
 .site-header.is-scrolled {
-  border-color: var(--border);
-  background: var(--surface);
+  box-shadow: 0 8px 30px rgb(0 0 0 / 7%);
 }
+.site-header > a:first-child { padding: 3px 8px; }
+.site-header .wordmark > span:first-child {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.8px;
+}
+.site-header .wordmark-suffix { font-size: 6px; margin-top: 4px; }
 .wordmark {
   display: inline-flex;
   flex-direction: column;
@@ -305,8 +312,7 @@ svg {
 .desktop-nav {
   display: flex;
   align-items: center;
-  gap: 32px;
-  margin-left: auto;
+  gap: 22px;
   font-size: 13px;
   color: var(--muted);
 }
@@ -319,21 +325,20 @@ svg {
 .header-contact {
   display: flex;
   align-items: center;
-  gap: 21px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--accent);
   border-radius: 4px;
-  padding: 8px 14px;
+  background: var(--accent);
+  color: var(--accent-fg);
+  padding: 8px 12px;
   font-size: 13px;
+  white-space: nowrap;
   transition:
     border-color 0.2s,
-    color 0.2s;
+    background 0.2s;
 }
 .header-contact:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-}
-.header-contact svg {
-  width: 14px;
+  border-color: #262626;
+  background: #262626;
 }
 .menu-toggle,
 .mobile-nav {
@@ -420,7 +425,7 @@ svg {
   transform: translateX(12px);
   transition: transform 0.7s var(--ease-out);
 }
-.service-story.enhanced .service h3 { color: #90968b; }
+.service-story.enhanced .service h3 { color: var(--muted); }
 .service-story.enhanced .service[data-active="true"] > div { transform: none; }
 .service-story.enhanced .service[data-active="true"] h3 { color: var(--accent); }
 .service-story.enhanced .service[data-active="true"] { border-color: var(--accent); }
@@ -764,7 +769,7 @@ svg {
 .experience-logo {
   object-fit: contain;
   flex-shrink: 0;
-  filter: grayscale(1);
+  filter: grayscale(1) brightness(0);
   opacity: 0.8;
   transition: opacity 0.4s;
 }
@@ -1017,13 +1022,11 @@ svg {
   }
 }
 @media (max-width: 1050px) {
-  .container,
-  .site-header {
+  .container {
     width: calc(100% - 64px);
   }
   .site-header {
     gap: 24px;
-    padding-inline: 12px;
   }
   .desktop-nav {
     gap: 24px;
@@ -1048,16 +1051,17 @@ svg {
   html {
     scroll-padding-top: 100px;
   }
-  .container,
-  .site-header {
+  .container {
     width: calc(100% - 40px);
   }
   .site-header {
     top: 12px;
     margin-top: 12px;
-    min-height: 64px;
-    padding: 10px 12px;
-    gap: 15px;
+    width: calc(100% - 32px);
+    max-width: 420px;
+    min-height: 54px;
+    padding: 6px 8px;
+    gap: 12px;
   }
   .wordmark > span:first-child {
     font-size: 24px;

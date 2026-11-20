@@ -85,4 +85,4 @@ Alternatively, enable `showTestimonialPlaceholders` in the config during develop
 
 The approved mockup supplies layout direction, not production text or photographs. Original work images use `next/image`, preserve aspect ratios, and load lazily below the fold. Eda’s original portrait appears only in About. No invented client marks, pricing, team, quotes, or domain are included.
 
-The chosen accent is warm sand (`#E8D5B0`), including the page, favicon, and sharing image.
+The current palette follows Eda’s Skroll reference: off-white (`#FCFCFC`), near-black (`#050505`), neutral gray (`#616161`), and light-gray surfaces/borders. The compact, centered floating header uses a solid black contact button. The favicon and sharing image use the same monochrome palette.

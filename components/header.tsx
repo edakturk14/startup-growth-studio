@@ -19,8 +19,8 @@ export function Header({ showTestimonials }: { showTestimonials: boolean }) {
   const menuButton = useRef<HTMLButtonElement>(null);
   const header = useRef<HTMLElement>(null);
   const links = [
-    { href: "#services", label: "Services" },
     { href: "#work", label: "Work" },
+    { href: "#services", label: "Services" },
     ...(showTestimonials
       ? [{ href: "#testimonials", label: "Testimonials" }]
       : []),
@@ -78,7 +78,7 @@ export function Header({ showTestimonials }: { showTestimonials: boolean }) {
         href="#contact"
         onClick={() => setOpen(false)}
       >
-        Let’s talk <Arrow diagonal />
+        Let’s talk
       </a>
       <button
         ref={menuButton}
