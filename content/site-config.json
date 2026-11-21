@@ -1,0 +1,17 @@
+{
+  "brandName": "E.A. Labs",
+  "brandSuffix": "",
+  "fullBrandName": "E.A. Labs",
+  "location": "Brooklyn, New York",
+  "email": "edakturk19@gmail.com",
+  "bookingUrl": null,
+  "canonicalUrl": null,
+  "founder": {
+    "firstName": "Eda",
+    "name": "Eda Akturk",
+    "image": "/images/eda-cryptist.webp",
+    "website": "https://www.edatweets.com/"
+  },
+  "socialLinks": {},
+  "showTestimonialPlaceholders": false
+}
