@@ -5,7 +5,8 @@ export const size = { width: 64, height: 64 };
 export const contentType = "image/png";
 export default function Icon() {
   const initials = site.brandName
-    .split(/\s*&\s*|\s+/)
+    .split(/[.\s&]+/)
+    .filter(Boolean)
     .map((word) => word[0])
     .slice(0, 2)
     .join("")

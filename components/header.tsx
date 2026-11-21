@@ -21,7 +21,7 @@ export function Wordmark() {
         <circle cx="19.5" cy="14" r="7" />
       </svg>
       <span className="wordmark-type">
-        <span className="wordmark-name">{site.brandName.toLowerCase()}</span>
+        <span className="wordmark-name">{site.brandName}</span>
         {site.brandSuffix && (
           <span className="wordmark-suffix">{site.brandSuffix}</span>
         )}

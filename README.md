@@ -1,6 +1,6 @@
-# Oruva
+# E.A. Labs
 
-An exploratory single-word naming direction for Eda’s growth studio. The dark background, warm-sand accent, centered header, original work, and community/content/strategy positioning are retained.
+Eda Akturk’s startup growth studio; E.A. stands for her initials. The selected design keeps the dark background, warm-sand accent, centered header, original work, and community/content/strategy positioning.
 
 A standalone studio website built with Next.js App Router, TypeScript, and Tailwind CSS, using the original handoff assets. This does not change edatweets.com.
 
